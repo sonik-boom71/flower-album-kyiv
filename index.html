@@ -1,0 +1,2883 @@
+<!DOCTYPE html>
+<html lang="ru" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Личный цветочный альбом Киева — цены 2025–2026, сезонность, вдохновение">
+<title>🌸 Цветочный альбом Киева</title>
+<style>
+/* ═══════════════════════════════════════════════════
+   CSS VARIABLES & THEMES
+═══════════════════════════════════════════════════ */
+:root {
+  --bg: #1a1a2e;
+  --bg2: #16213e;
+  --bg3: #0f3460;
+  --text: #e0e0e0;
+  --text2: #a0a0b8;
+  --accent: #e8a0bf;
+  --accent2: #c9a0e8;
+  --accent3: #a0c4e8;
+  --card: rgba(255,255,255,0.06);
+  --card-hover: rgba(255,255,255,0.10);
+  --border: rgba(255,255,255,0.10);
+  --blur: blur(12px);
+  --shadow: 0 8px 32px rgba(0,0,0,0.35);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.25);
+  --nav-bg: rgba(22,33,62,0.85);
+  --input-bg: rgba(255,255,255,0.08);
+  --input-border: rgba(255,255,255,0.15);
+  --modal-bg: rgba(15,20,45,0.97);
+  --stripe: rgba(255,255,255,0.025);
+  --badge-bg: rgba(232,160,191,0.18);
+  --badge-text: #e8a0bf;
+  --danger: #ff6b6b;
+  --success: #2ecc71;
+  --r: 16px;
+  --r-sm: 8px;
+  --transition: 0.3s ease;
+}
+[data-theme="light"] {
+  --bg: #fff5f5;
+  --bg2: #ffe9ef;
+  --bg3: #fdd9e3;
+  --text: #2d2d2d;
+  --text2: #6d6d7d;
+  --accent: #c2185b;
+  --accent2: #7b1fa2;
+  --accent3: #1565c0;
+  --card: rgba(255,255,255,0.7);
+  --card-hover: rgba(255,255,255,0.92);
+  --border: rgba(0,0,0,0.08);
+  --shadow: 0 8px 32px rgba(0,0,0,0.10);
+  --shadow-card: 0 4px 20px rgba(0,0,0,0.08);
+  --nav-bg: rgba(255,245,245,0.85);
+  --input-bg: rgba(0,0,0,0.04);
+  --input-border: rgba(0,0,0,0.12);
+  --modal-bg: rgba(255,250,252,0.98);
+  --stripe: rgba(0,0,0,0.02);
+  --badge-bg: rgba(194,24,91,0.12);
+  --badge-text: #c2185b;
+}
+
+/* ═══════════════════════════════════════════════════
+   RESET & BASE
+═══════════════════════════════════════════════════ */
+*,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
+html { scroll-behavior:smooth; scroll-padding-top:80px; }
+body {
+  background:var(--bg);
+  color:var(--text);
+  font-family:'Segoe UI', system-ui, -apple-system, sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  transition: background var(--transition), color var(--transition);
+  overflow-x:hidden;
+  min-height:100vh;
+}
+img { max-width:100%; display:block; }
+button { cursor:pointer; border:none; background:none; font-family:inherit; font-size:inherit; color:inherit; }
+input, textarea, select { font-family:inherit; font-size:inherit; }
+a { color:var(--accent); text-decoration:none; }
+a:hover { text-decoration:underline; }
+ul { list-style:none; }
+
+::-webkit-scrollbar { width:8px; height:8px; }
+::-webkit-scrollbar-track { background:var(--bg); }
+::-webkit-scrollbar-thumb { background:var(--accent); border-radius:4px; }
+::-webkit-scrollbar-thumb:hover { background:var(--accent2); }
+
+/* ═══════════════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════════════ */
+h1 { font-size:clamp(2rem, 5vw, 3.5rem); font-weight:800; line-height:1.1; letter-spacing:-0.02em; }
+h2 { font-size:clamp(1.5rem, 3vw, 2.2rem); font-weight:700; letter-spacing:-0.01em; }
+h3 { font-size:1.2rem; font-weight:600; }
+.gradient-text {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+  background-clip:text;
+}
+
+/* ═══════════════════════════════════════════════════
+   LAYOUT
+═══════════════════════════════════════════════════ */
+.container { max-width:1240px; margin:0 auto; padding:0 24px; }
+.section { padding:80px 0; position:relative; }
+.section-header { text-align:center; margin-bottom:48px; }
+.section-title { display:flex; align-items:center; justify-content:center; gap:14px; margin-bottom:12px; }
+.section-title-icon { font-size:2.2rem; }
+.section-subtitle { color:var(--text2); font-size:1.05rem; max-width:600px; margin:0 auto; }
+.grid-3 { display:grid; grid-template-columns:repeat(auto-fill, minmax(280px, 1fr)); gap:24px; }
+.grid-4 { display:grid; grid-template-columns:repeat(auto-fill, minmax(240px, 1fr)); gap:20px; }
+
+/* ═══════════════════════════════════════════════════
+   NAVBAR
+═══════════════════════════════════════════════════ */
+#navbar {
+  position:fixed; top:0; left:0; right:0; z-index:100;
+  background:var(--nav-bg);
+  backdrop-filter:var(--blur);
+  -webkit-backdrop-filter:var(--blur);
+  border-bottom:1px solid var(--border);
+  transition: background var(--transition), border-color var(--transition);
+}
+.nav-inner {
+  max-width:1240px; margin:0 auto; padding:0 24px;
+  display:flex; align-items:center; gap:16px; height:68px;
+}
+.nav-logo {
+  font-size:1.05rem; font-weight:800; color:var(--text);
+  white-space:nowrap; margin-right:8px; display:flex; align-items:center; gap:6px;
+}
+.nav-logo-icon { font-size:1.5rem; }
+.nav-links {
+  display:flex; gap:2px; flex:1;
+  overflow-x:auto; scrollbar-width:none;
+}
+.nav-links::-webkit-scrollbar { display:none; }
+.nav-link {
+  padding:8px 14px; border-radius:var(--r-sm);
+  color:var(--text2); font-size:.9rem; white-space:nowrap; font-weight:500;
+  transition: all var(--transition);
+}
+.nav-link:hover, .nav-link.active {
+  background:var(--badge-bg); color:var(--accent); text-decoration:none;
+}
+.nav-actions { display:flex; gap:8px; margin-left:auto; flex-shrink:0; }
+.nav-btn {
+  position:relative;
+  width:42px; height:42px; border-radius:50%;
+  background:var(--card); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.05rem; transition: all var(--transition);
+  color:var(--text);
+}
+.nav-btn:hover {
+  background:var(--badge-bg); border-color:var(--accent); color:var(--accent);
+  transform: translateY(-1px);
+}
+.nav-btn.active {
+  background:var(--badge-bg); border-color:var(--accent); color:var(--accent);
+}
+.fav-count-badge {
+  position:absolute; top:-4px; right:-4px;
+  min-width:18px; height:18px; padding:0 5px; border-radius:9px;
+  background:var(--accent); color:#fff; font-size:10px; font-weight:700;
+  display:flex; align-items:center; justify-content:center;
+}
+.fav-count-badge.hidden { display:none; }
+
+/* ═══════════════════════════════════════════════════
+   HERO
+═══════════════════════════════════════════════════ */
+#hero {
+  min-height:100vh; display:flex; align-items:center; justify-content:center;
+  position:relative; overflow:hidden;
+  background:
+    radial-gradient(ellipse at top left, rgba(232,160,191,0.15), transparent 60%),
+    radial-gradient(ellipse at bottom right, rgba(201,160,232,0.15), transparent 60%),
+    linear-gradient(135deg, var(--bg) 0%, var(--bg2) 50%, var(--bg3) 100%);
+  text-align:center; padding:120px 24px 80px;
+}
+.hero-bg-petals {
+  position:absolute; inset:0; overflow:hidden; pointer-events:none; z-index:1;
+}
+.hero-petal {
+  position:absolute; animation: floatPetal linear infinite;
+  user-select:none;
+}
+@keyframes floatPetal {
+  0%   { transform: translateY(110vh) rotate(0deg); opacity:0; }
+  10%  { opacity:0.18; }
+  90%  { opacity:0.18; }
+  100% { transform: translateY(-15vh) rotate(720deg); opacity:0; }
+}
+.hero-content { position:relative; z-index:2; max-width:780px; }
+.hero-badge {
+  display:inline-flex; align-items:center; gap:8px;
+  background:var(--badge-bg); border:1px solid rgba(232,160,191,0.3);
+  border-radius:50px; padding:7px 18px; font-size:.85rem;
+  color:var(--accent); margin-bottom:28px; font-weight:600;
+  backdrop-filter:var(--blur);
+}
+.hero-title { margin-bottom:24px; }
+.hero-subtitle {
+  font-size:1.18rem; color:var(--text2);
+  margin-bottom:44px; line-height:1.7; max-width:560px; margin-left:auto; margin-right:auto;
+}
+.hero-cta { display:flex; gap:16px; justify-content:center; flex-wrap:wrap; }
+.btn-primary {
+  padding:14px 32px; border-radius:50px; font-size:1rem; font-weight:600;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; transition: all var(--transition);
+  box-shadow:0 4px 20px rgba(232,160,191,0.35);
+}
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow:0 8px 30px rgba(232,160,191,0.5);
+}
+.btn-secondary {
+  padding:14px 32px; border-radius:50px; font-size:1rem; font-weight:600;
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  transition: all var(--transition); backdrop-filter:var(--blur);
+}
+.btn-secondary:hover {
+  border-color:var(--accent); color:var(--accent); transform: translateY(-2px);
+}
+.hero-stats {
+  display:flex; gap:40px; justify-content:center; margin-top:60px; flex-wrap:wrap;
+}
+.hero-stat { text-align:center; }
+.hero-stat-num {
+  font-size:2.2rem; font-weight:800;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+}
+.hero-stat-label { font-size:.85rem; color:var(--text2); margin-top:2px; }
+
+/* ═══════════════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════════════ */
+.card {
+  background:var(--card);
+  backdrop-filter:var(--blur);
+  -webkit-backdrop-filter:var(--blur);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  box-shadow:var(--shadow-card);
+  transition: all var(--transition);
+  overflow:hidden;
+  cursor:pointer;
+  position:relative;
+  display:flex; flex-direction:column;
+}
+.card:hover {
+  transform: translateY(-4px);
+  box-shadow:var(--shadow);
+  border-color:rgba(232,160,191,0.4);
+  background:var(--card-hover);
+}
+.card-img-wrap {
+  height:190px; display:flex; align-items:center; justify-content:center;
+  font-size:72px; position:relative; overflow:hidden;
+  background-size:cover; background-position:center;
+}
+.card-img-wrap::after {
+  content:''; position:absolute; inset:0;
+  background:linear-gradient(180deg, transparent 50%, rgba(0,0,0,0.15));
+  pointer-events:none;
+}
+.card-emoji { position:relative; z-index:2; filter:drop-shadow(0 4px 12px rgba(0,0,0,0.25)); }
+.card-body { padding:18px; flex:1; display:flex; flex-direction:column; }
+.card-head { display:flex; align-items:flex-start; justify-content:space-between; gap:10px; margin-bottom:6px; }
+.card-title { font-weight:700; font-size:1.06rem; line-height:1.3; }
+.card-subtitle { font-size:.82rem; color:var(--text2); margin-bottom:10px; font-style:italic; }
+.card-price {
+  font-size:1.12rem; font-weight:700;
+  color:var(--accent); margin-top:auto;
+}
+.card-price-edit {
+  background:transparent; border:1px solid transparent;
+  border-radius:4px; padding:2px 6px; color:var(--accent);
+  font-weight:700; font-size:1.12rem; width:auto; min-width:60px;
+}
+.card-price-edit:focus {
+  outline:none; border-color:var(--accent); background:var(--input-bg);
+}
+.card-meta { font-size:.85rem; color:var(--text2); margin-bottom:10px; }
+.tags { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.tag {
+  display:inline-flex; align-items:center; gap:4px;
+  padding:3px 10px; border-radius:50px;
+  background:var(--badge-bg); color:var(--badge-text);
+  font-size:.76rem; font-weight:600;
+}
+.tag-season { background:rgba(160,196,232,0.18); color:var(--accent3); }
+.tag-scent { background:rgba(201,160,232,0.18); color:var(--accent2); }
+.tag-dry { background:rgba(184,168,152,0.25); color:#d4a574; }
+.color-dot {
+  width:10px; height:10px; border-radius:50%;
+  border:1.5px solid rgba(255,255,255,0.3); flex-shrink:0;
+}
+.card-fav {
+  position:absolute; top:12px; right:12px; z-index:5;
+  width:36px; height:36px; border-radius:50%;
+  background:rgba(0,0,0,0.4); backdrop-filter:blur(10px);
+  border:1px solid rgba(255,255,255,0.2);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; transition: all var(--transition); color:#fff;
+}
+.card-fav:hover { transform:scale(1.12); background:rgba(0,0,0,0.6); }
+.card-fav.active { background:var(--accent); color:#fff; border-color:var(--accent); }
+.card-del {
+  position:absolute; top:12px; left:12px; z-index:5;
+  width:32px; height:32px; border-radius:50%;
+  background:rgba(255,107,107,0.85); color:#fff;
+  display:none; align-items:center; justify-content:center;
+  font-size:.85rem; transition: all var(--transition);
+  border:1px solid rgba(255,255,255,0.2);
+}
+.card-del:hover { transform:scale(1.12); background:var(--danger); }
+.card.is-custom .card-del { display:flex; }
+
+/* Add card button */
+.add-card-btn {
+  display:flex; flex-direction:column; align-items:center; justify-content:center;
+  gap:14px; background:var(--card); border:2px dashed var(--border);
+  border-radius:var(--r); padding:40px 20px; min-height:300px;
+  cursor:pointer; transition: all var(--transition);
+  color:var(--text2); font-family:inherit; width:100%;
+}
+.add-card-btn:hover {
+  border-color:var(--accent); color:var(--accent);
+  background:var(--badge-bg);
+}
+.add-card-btn .add-icon { font-size:2.8rem; transition: transform var(--transition); }
+.add-card-btn:hover .add-icon { transform:scale(1.15) rotate(90deg); }
+.add-card-btn span { font-weight:600; font-size:.95rem; }
+
+/* ═══════════════════════════════════════════════════
+   FILTERS
+═══════════════════════════════════════════════════ */
+.filters-bar {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:18px; margin-bottom:28px;
+  display:flex; flex-wrap:wrap; gap:14px; align-items:center;
+  backdrop-filter:var(--blur);
+}
+.search-wrap { position:relative; flex:1; min-width:220px; }
+.search-icon {
+  position:absolute; left:14px; top:50%; transform:translateY(-50%);
+  color:var(--text2); font-size:.95rem; pointer-events:none;
+}
+.filter-input {
+  width:100%; padding:10px 14px 10px 38px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); color:var(--text);
+  transition: border-color var(--transition); outline:none;
+}
+.filter-input:focus { border-color:var(--accent); }
+.filter-select {
+  padding:10px 14px; background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); color:var(--text); outline:none; cursor:pointer;
+  transition: border-color var(--transition); min-width:140px;
+}
+.filter-select:focus { border-color:var(--accent); }
+.filter-select option { background:var(--bg2); color:var(--text); }
+.filter-label { font-size:.85rem; color:var(--text2); white-space:nowrap; font-weight:500; }
+.filter-range-group { display:flex; align-items:center; gap:10px; flex-wrap:wrap; }
+.filter-range {
+  -webkit-appearance:none; appearance:none;
+  height:6px; border-radius:3px;
+  background:var(--border); outline:none; width:120px; cursor:pointer;
+}
+.filter-range::-webkit-slider-thumb {
+  -webkit-appearance:none; appearance:none;
+  width:18px; height:18px; border-radius:50%;
+  background:var(--accent); cursor:pointer; border:2px solid var(--bg);
+  box-shadow:0 2px 8px rgba(232,160,191,0.4);
+}
+.filter-range::-moz-range-thumb {
+  width:18px; height:18px; border-radius:50%;
+  background:var(--accent); cursor:pointer; border:2px solid var(--bg);
+}
+.filter-range-val {
+  font-size:.85rem; color:var(--accent); font-weight:700; min-width:80px;
+}
+.filter-chips { display:flex; gap:6px; flex-wrap:wrap; }
+.filter-chip {
+  padding:6px 14px; border-radius:50px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  color:var(--text2); font-size:.82rem; cursor:pointer; font-weight:500;
+  transition: all var(--transition);
+}
+.filter-chip:hover { color:var(--accent); border-color:var(--accent); }
+.filter-chip.active {
+  background:var(--badge-bg); border-color:var(--accent); color:var(--accent);
+}
+.filter-reset {
+  padding:8px 14px; border-radius:var(--r-sm);
+  background:transparent; border:1px solid var(--input-border);
+  color:var(--text2); font-size:.85rem; cursor:pointer;
+  transition: all var(--transition);
+}
+.filter-reset:hover { color:var(--danger); border-color:var(--danger); }
+
+/* ═══════════════════════════════════════════════════
+   PRICE TABLE
+═══════════════════════════════════════════════════ */
+.price-table-wrap {
+  overflow-x:auto; border-radius:var(--r);
+  border:1px solid var(--border); background:var(--card);
+  backdrop-filter:var(--blur);
+}
+.price-table { width:100%; border-collapse:collapse; font-size:.94rem; min-width:780px; }
+.price-table th {
+  background:var(--card); padding:14px 16px; text-align:left;
+  font-weight:600; color:var(--text2); font-size:.78rem;
+  text-transform:uppercase; letter-spacing:.05em;
+  border-bottom:1px solid var(--border); white-space:nowrap;
+  position:sticky; top:0;
+}
+.price-table th.sortable { cursor:pointer; user-select:none; transition: color var(--transition); }
+.price-table th.sortable:hover { color:var(--accent); }
+.sort-arrow { margin-left:4px; font-size:.75rem; opacity:.6; }
+.sort-arrow.active { opacity:1; color:var(--accent); }
+.price-table td { padding:12px 16px; border-bottom:1px solid var(--border); vertical-align:middle; }
+.price-table tr:last-child td { border-bottom:none; }
+.price-table tr:nth-child(even) td { background:var(--stripe); }
+.price-table tr:hover td { background:var(--card-hover); }
+.price-table .name-cell {
+  display:flex; align-items:center; gap:10px; font-weight:600;
+}
+.price-table .name-cell .emoji { font-size:1.4rem; }
+.price-input {
+  width:80px; padding:6px 10px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); color:var(--text); outline:none;
+  transition: border-color var(--transition); font-weight:600;
+}
+.price-input:focus { border-color:var(--accent); }
+.verified-badge {
+  display:inline-flex; align-items:center; gap:6px; cursor:pointer; user-select:none;
+}
+.verified-badge input[type="checkbox"] {
+  width:16px; height:16px; accent-color:var(--accent); cursor:pointer;
+}
+.verified-text { font-size:.82rem; color:var(--text2); }
+.verified-badge.checked .verified-text {
+  color:var(--success); font-weight:600;
+}
+.verified-badge.checked .verified-text::before { content:'✓ '; }
+
+/* ═══════════════════════════════════════════════════
+   CALENDAR
+═══════════════════════════════════════════════════ */
+.calendar-grid {
+  display:grid; grid-template-columns:repeat(auto-fill, minmax(260px, 1fr)); gap:16px;
+}
+.month-card {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:20px; backdrop-filter:var(--blur);
+  transition: all var(--transition);
+}
+.month-card:hover {
+  border-color:rgba(232,160,191,0.4); transform: translateY(-2px);
+  box-shadow:var(--shadow-card);
+}
+.month-card.current {
+  border-color:var(--accent);
+  background:linear-gradient(135deg, rgba(232,160,191,0.12), rgba(201,160,232,0.08));
+  box-shadow:0 4px 20px rgba(232,160,191,0.15);
+}
+.month-name {
+  font-weight:700; font-size:1.15rem; margin-bottom:4px;
+  display:flex; align-items:center; gap:10px; flex-wrap:wrap;
+}
+.month-badge {
+  font-size:.72rem; padding:3px 10px; border-radius:50px;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; font-weight:700;
+}
+.month-flowers { display:flex; flex-wrap:wrap; gap:6px; margin-top:12px; }
+.month-flower-tag {
+  font-size:.78rem; padding:4px 10px; border-radius:50px;
+  background:var(--badge-bg); color:var(--badge-text);
+  display:inline-flex; align-items:center; gap:4px;
+}
+.month-count { font-size:.82rem; color:var(--text2); margin-top:8px; }
+
+/* ═══════════════════════════════════════════════════
+   INSPIRATION
+═══════════════════════════════════════════════════ */
+.insp-layout {
+  display:grid; grid-template-columns:1fr 1fr; gap:32px;
+}
+.insp-block {
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r); padding:24px; backdrop-filter:var(--blur);
+}
+.insp-block h3 { margin-bottom:16px; display:flex; align-items:center; gap:8px; }
+.notes-area {
+  width:100%; min-height:220px; padding:14px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); color:var(--text); resize:vertical; outline:none;
+  transition: border-color var(--transition);
+  font-size:.95rem; line-height:1.7; font-family:inherit;
+}
+.notes-area:focus { border-color:var(--accent); }
+.notes-saved-hint {
+  font-size:.78rem; color:var(--text2); margin-top:8px;
+  display:flex; align-items:center; gap:4px;
+}
+.notes-saved-hint.show { color:var(--success); }
+.links-list { display:flex; flex-direction:column; gap:10px; margin-bottom:14px; }
+.link-item {
+  display:flex; align-items:center; gap:12px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); padding:10px 14px;
+}
+.link-icon { font-size:1.2rem; flex-shrink:0; }
+.link-info { flex:1; min-width:0; overflow:hidden; }
+.link-name { font-weight:600; font-size:.92rem; }
+.link-url {
+  font-size:.78rem; color:var(--accent);
+  text-overflow:ellipsis; overflow:hidden; white-space:nowrap; display:block;
+}
+.link-del {
+  color:var(--text2); font-size:1rem; padding:4px 8px;
+  transition: color var(--transition);
+}
+.link-del:hover { color:var(--danger); }
+.add-link-form { display:flex; gap:8px; flex-wrap:wrap; }
+.add-link-form input { flex:1; min-width:120px; }
+.add-link-form button {
+  padding:10px 16px; border-radius:var(--r-sm); font-weight:600;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; transition: opacity var(--transition);
+}
+.add-link-form button:hover { opacity:.9; }
+
+/* ═══════════════════════════════════════════════════
+   MODAL
+═══════════════════════════════════════════════════ */
+.modal-overlay {
+  position:fixed; inset:0; z-index:200;
+  background:rgba(0,0,0,0.65); backdrop-filter:blur(6px);
+  display:flex; align-items:center; justify-content:center; padding:20px;
+  opacity:0; pointer-events:none;
+  transition: opacity var(--transition);
+}
+.modal-overlay.open { opacity:1; pointer-events:all; }
+.modal {
+  background:var(--modal-bg); border:1px solid var(--border);
+  border-radius:var(--r); max-width:600px; width:100%;
+  max-height:88vh; overflow-y:auto;
+  transform: scale(0.95) translateY(20px);
+  transition: transform var(--transition);
+  box-shadow:0 24px 80px rgba(0,0,0,0.4);
+  backdrop-filter:var(--blur);
+}
+.modal-overlay.open .modal { transform: scale(1) translateY(0); }
+.modal-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:18px 24px; border-bottom:1px solid var(--border);
+  position:sticky; top:0; background:var(--modal-bg); z-index:2;
+}
+.modal-title { font-weight:700; font-size:1.15rem; }
+.modal-close {
+  width:34px; height:34px; border-radius:50%;
+  background:var(--card); border:1px solid var(--border);
+  display:flex; align-items:center; justify-content:center;
+  font-size:1rem; transition: all var(--transition); color:var(--text);
+}
+.modal-close:hover {
+  background:rgba(255,107,107,0.15); border-color:var(--danger); color:var(--danger);
+}
+.modal-body { padding:24px; }
+.modal-img {
+  height:240px; display:flex; align-items:center; justify-content:center;
+  font-size:96px; border-radius:var(--r-sm); margin-bottom:24px;
+  overflow:hidden; position:relative; background-size:cover; background-position:center;
+}
+.modal-img-emoji { filter:drop-shadow(0 8px 24px rgba(0,0,0,0.3)); }
+.modal-title-big { font-size:1.5rem; font-weight:800; margin-bottom:4px; }
+.modal-subtitle { font-size:.9rem; color:var(--text2); font-style:italic; margin-bottom:18px; }
+.modal-price-big {
+  font-size:1.8rem; font-weight:800;
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip:text; -webkit-text-fill-color:transparent; background-clip:text;
+  margin-bottom:20px;
+}
+.modal-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-bottom:18px; }
+.modal-field {
+  background:var(--stripe); border-radius:var(--r-sm);
+  padding:12px 14px;
+}
+.modal-field label {
+  font-size:.72rem; color:var(--text2);
+  text-transform:uppercase; letter-spacing:.05em;
+  display:block; margin-bottom:4px; font-weight:600;
+}
+.modal-field-val { font-weight:600; font-size:.95rem; }
+.modal-note {
+  font-size:.92rem; color:var(--text2); line-height:1.7;
+  padding:14px 16px; background:var(--stripe); border-radius:var(--r-sm);
+  border-left:3px solid var(--accent); margin-top:18px;
+}
+.modal-seasons-row {
+  display:grid; grid-template-columns:repeat(12, 1fr); gap:4px; margin-top:8px;
+}
+.season-pill {
+  text-align:center; padding:6px 2px; border-radius:6px;
+  background:var(--input-bg); font-size:.7rem; font-weight:600;
+  color:var(--text2); border:1px solid var(--input-border);
+}
+.season-pill.active {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; border-color:transparent;
+}
+.modal-colors-row { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+
+/* ═══════════════════════════════════════════════════
+   FORM
+═══════════════════════════════════════════════════ */
+.form-group { margin-bottom:16px; }
+.form-label {
+  display:block; font-size:.85rem; font-weight:600;
+  margin-bottom:6px; color:var(--text2);
+}
+.form-input, .form-textarea, .form-select {
+  width:100%; padding:11px 14px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  border-radius:var(--r-sm); color:var(--text); outline:none;
+  transition: border-color var(--transition);
+}
+.form-input:focus, .form-textarea:focus, .form-select:focus { border-color:var(--accent); }
+.form-textarea { resize:vertical; min-height:80px; font-family:inherit; }
+.form-select option { background:var(--bg2); }
+.form-row { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+.form-checkbox {
+  display:flex; align-items:center; gap:10px; cursor:pointer;
+  padding:10px 14px; background:var(--input-bg);
+  border:1px solid var(--input-border); border-radius:var(--r-sm);
+  user-select:none; transition: border-color var(--transition);
+}
+.form-checkbox:hover { border-color:var(--accent); }
+.form-checkbox input { accent-color:var(--accent); width:18px; height:18px; cursor:pointer; }
+.months-picker {
+  display:grid; grid-template-columns:repeat(6, 1fr); gap:6px;
+}
+.month-pick-btn {
+  padding:8px 4px; border-radius:6px;
+  background:var(--input-bg); border:1px solid var(--input-border);
+  color:var(--text2); font-size:.78rem; font-weight:600;
+  cursor:pointer; transition: all var(--transition);
+}
+.month-pick-btn:hover { border-color:var(--accent); color:var(--accent); }
+.month-pick-btn.active {
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; border-color:transparent;
+}
+.form-actions {
+  display:flex; gap:12px; justify-content:flex-end;
+  padding-top:8px; margin-top:8px;
+}
+.btn-save {
+  padding:11px 24px; border-radius:var(--r-sm); font-weight:600;
+  background:linear-gradient(135deg, var(--accent), var(--accent2)); color:#fff;
+  transition: all var(--transition);
+}
+.btn-save:hover { transform: translateY(-1px); box-shadow:0 4px 16px rgba(232,160,191,0.4); }
+.btn-cancel {
+  padding:11px 24px; border-radius:var(--r-sm); font-weight:600;
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  transition: all var(--transition);
+}
+.btn-cancel:hover { border-color:var(--accent); color:var(--accent); }
+
+/* ═══════════════════════════════════════════════════
+   FAVORITES PANEL
+═══════════════════════════════════════════════════ */
+.fav-panel {
+  position:fixed; top:0; right:-420px; bottom:0; width:380px; z-index:150;
+  background:var(--modal-bg); border-left:1px solid var(--border);
+  box-shadow:-20px 0 60px rgba(0,0,0,0.3);
+  transition: right var(--transition);
+  overflow-y:auto; backdrop-filter:var(--blur);
+}
+.fav-panel.open { right:0; }
+.fav-overlay {
+  position:fixed; inset:0; z-index:149;
+  background:rgba(0,0,0,0.4); backdrop-filter:blur(2px);
+  opacity:0; pointer-events:none;
+  transition: opacity var(--transition);
+}
+.fav-overlay.open { opacity:1; pointer-events:all; }
+.fav-header {
+  display:flex; align-items:center; justify-content:space-between;
+  padding:20px 22px; border-bottom:1px solid var(--border);
+  position:sticky; top:0; background:var(--modal-bg); z-index:1;
+}
+.fav-header h3 { display:flex; align-items:center; gap:8px; }
+.fav-body { padding:18px; }
+.fav-empty {
+  text-align:center; color:var(--text2);
+  padding:60px 20px; font-size:.95rem;
+}
+.fav-empty-icon { font-size:3rem; opacity:.4; margin-bottom:12px; display:block; }
+.fav-card {
+  display:flex; gap:12px; align-items:center;
+  background:var(--card); border:1px solid var(--border);
+  border-radius:var(--r-sm); padding:12px;
+  margin-bottom:10px; cursor:pointer; transition: all var(--transition);
+}
+.fav-card:hover { border-color:var(--accent); }
+.fav-card-img {
+  width:54px; height:54px; border-radius:var(--r-sm); flex-shrink:0;
+  display:flex; align-items:center; justify-content:center;
+  font-size:1.8rem; background-size:cover; background-position:center;
+}
+.fav-card-info { flex:1; min-width:0; }
+.fav-card-type {
+  font-size:.7rem; color:var(--text2); text-transform:uppercase;
+  letter-spacing:.05em; font-weight:600;
+}
+.fav-card-name {
+  font-weight:600; font-size:.95rem;
+  white-space:nowrap; overflow:hidden; text-overflow:ellipsis;
+}
+.fav-card-price { font-size:.85rem; color:var(--accent); font-weight:600; }
+.fav-remove {
+  width:30px; height:30px; border-radius:50%;
+  background:var(--input-bg); display:flex;
+  align-items:center; justify-content:center;
+  font-size:.85rem; color:var(--text2); flex-shrink:0;
+  transition: all var(--transition);
+}
+.fav-remove:hover { background:rgba(255,107,107,0.15); color:var(--danger); }
+
+/* ═══════════════════════════════════════════════════
+   EDIT MODE
+═══════════════════════════════════════════════════ */
+.edit-mode-bar {
+  position:fixed; bottom:24px; left:50%; transform:translateX(-50%);
+  background:linear-gradient(135deg, var(--accent), var(--accent2));
+  color:#fff; padding:12px 24px; border-radius:50px;
+  box-shadow:0 8px 32px rgba(232,160,191,0.4);
+  display:flex; align-items:center; gap:14px;
+  z-index:90; font-weight:600; font-size:.9rem;
+  opacity:0; pointer-events:none;
+  transition: opacity var(--transition), transform var(--transition);
+}
+.edit-mode-bar.show {
+  opacity:1; pointer-events:all;
+  transform:translateX(-50%) translateY(0);
+}
+.edit-mode-bar button {
+  background:rgba(255,255,255,0.2); color:#fff;
+  padding:6px 14px; border-radius:50px; font-weight:600;
+  transition: background var(--transition);
+}
+.edit-mode-bar button:hover { background:rgba(255,255,255,0.3); }
+
+body.edit-mode .card-price-edit {
+  border-color: var(--accent);
+  background: rgba(232,160,191,0.08);
+  cursor:text;
+}
+
+/* ═══════════════════════════════════════════════════
+   FOOTER
+═══════════════════════════════════════════════════ */
+#footer {
+  background:var(--bg2); border-top:1px solid var(--border);
+  padding:48px 0 24px; margin-top:0;
+}
+.footer-inner { max-width:1240px; margin:0 auto; padding:0 24px; }
+.footer-top {
+  display:grid; grid-template-columns:1.5fr 1fr 1fr; gap:40px; margin-bottom:32px;
+}
+.footer-logo {
+  font-size:1.3rem; font-weight:800; margin-bottom:10px;
+  display:flex; align-items:center; gap:8px;
+}
+.footer-desc { font-size:.92rem; color:var(--text2); line-height:1.7; }
+.footer-col-title {
+  font-weight:700; font-size:.82rem; text-transform:uppercase;
+  letter-spacing:.05em; color:var(--text); margin-bottom:14px;
+}
+.footer-links-list { display:flex; flex-direction:column; gap:8px; }
+.footer-links-list li { font-size:.9rem; color:var(--text2); }
+.footer-links-list a { color:var(--text2); transition: color var(--transition); }
+.footer-links-list a:hover { color:var(--accent); text-decoration:none; }
+.footer-bottom {
+  border-top:1px solid var(--border); padding-top:20px;
+  display:flex; align-items:center; justify-content:space-between;
+  flex-wrap:wrap; gap:12px; font-size:.85rem; color:var(--text2);
+}
+.footer-version { font-size:.78rem; }
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════════════════ */
+.fade-in {
+  opacity:0; transform: translateY(30px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+.fade-in.visible { opacity:1; transform: translateY(0); }
+.fade-in.d1 { transition-delay:.08s; }
+.fade-in.d2 { transition-delay:.16s; }
+.fade-in.d3 { transition-delay:.24s; }
+
+/* ═══════════════════════════════════════════════════
+   LOAD MORE
+═══════════════════════════════════════════════════ */
+.load-more-wrap { text-align:center; margin-top:36px; }
+.btn-load-more {
+  padding:12px 32px; border-radius:50px; font-weight:600;
+  background:var(--card); border:1px solid var(--border); color:var(--text);
+  backdrop-filter:var(--blur); transition: all var(--transition);
+}
+.btn-load-more:hover {
+  border-color:var(--accent); color:var(--accent); transform: translateY(-2px);
+}
+
+/* ═══════════════════════════════════════════════════
+   EMPTY STATE
+═══════════════════════════════════════════════════ */
+.empty-state {
+  text-align:center; padding:60px 20px; color:var(--text2);
+  background:var(--card); border:1px dashed var(--border);
+  border-radius:var(--r); backdrop-filter:var(--blur);
+}
+.empty-state-icon { font-size:3.5rem; opacity:.4; margin-bottom:12px; }
+.empty-state-text { font-size:1rem; }
+
+/* ═══════════════════════════════════════════════════
+   TOAST
+═══════════════════════════════════════════════════ */
+.toast {
+  position:fixed; top:88px; right:24px; z-index:300;
+  background:var(--modal-bg); border:1px solid var(--border);
+  border-left:4px solid var(--success);
+  border-radius:var(--r-sm); padding:14px 20px;
+  box-shadow:0 8px 32px rgba(0,0,0,0.3);
+  display:flex; align-items:center; gap:10px;
+  opacity:0; transform: translateX(120%);
+  transition: opacity var(--transition), transform var(--transition);
+  max-width:340px;
+}
+.toast.show { opacity:1; transform: translateX(0); }
+.toast.error { border-left-color:var(--danger); }
+.toast-icon { font-size:1.2rem; }
+
+/* ═══════════════════════════════════════════════════
+   RESPONSIVE
+═══════════════════════════════════════════════════ */
+@media (max-width:980px) {
+  .footer-top { grid-template-columns:1fr 1fr; }
+  .insp-layout { grid-template-columns:1fr; }
+}
+@media (max-width:768px) {
+  .nav-links { display:none; }
+  .nav-inner { height:60px; }
+  .section { padding:60px 0; }
+  .modal-grid { grid-template-columns:1fr; }
+  .form-row { grid-template-columns:1fr; }
+  .footer-top { grid-template-columns:1fr; gap:28px; }
+  .hero-stats { gap:24px; }
+  .filters-bar { padding:14px; gap:10px; }
+  .fav-panel { width:88%; right:-100%; }
+  .container { padding:0 16px; }
+}
+@media (max-width:480px) {
+  .hero-stat-num { font-size:1.6rem; }
+  .grid-3, .grid-4 { grid-template-columns:1fr; }
+  .modal-body { padding:18px; }
+  .modal-img { height:180px; font-size:72px; }
+  .nav-btn { width:38px; height:38px; }
+  .toast { right:12px; left:12px; max-width:none; }
+}
+</style>
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════
+     NAVBAR
+═══════════════════════════════════════════════════ -->
+<header id="navbar">
+  <div class="nav-inner">
+    <div class="nav-logo">
+      <span class="nav-logo-icon">🌸</span>
+      <span>Цветочный альбом Киева</span>
+    </div>
+    <nav class="nav-links" id="navLinks">
+      <a href="#hero" class="nav-link">Главная</a>
+      <a href="#bouquets" class="nav-link">Букеты</a>
+      <a href="#arrangements" class="nav-link">Сборы</a>
+      <a href="#flowers" class="nav-link">Цветы</a>
+      <a href="#prices" class="nav-link">Цены</a>
+      <a href="#calendar" class="nav-link">Календарь</a>
+      <a href="#inspiration" class="nav-link">Вдохновение</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="nav-btn" id="editBtn" title="Режим редактирования">⚙️</button>
+      <button class="nav-btn" id="themeBtn" title="Сменить тему">🌙</button>
+      <button class="nav-btn" id="favBtn" title="Избранное">
+        ♡
+        <span class="fav-count-badge hidden" id="favCount">0</span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ═══════════════════════════════════════════════════
+     HERO
+═══════════════════════════════════════════════════ -->
+<section id="hero">
+  <div class="hero-bg-petals" id="heroPetals"></div>
+  <div class="hero-content">
+    <div class="hero-badge">
+      <span>🌷</span>
+      <span>Киев · 2025–2026</span>
+    </div>
+    <h1 class="hero-title">
+      Твой персональный <span class="gradient-text">цветочный гид</span>
+    </h1>
+    <p class="hero-subtitle">
+      Актуальные цены, сезонность, символика и вдохновение —
+      всё, что нужно для красивых букетов и тёплых поводов.
+    </p>
+    <div class="hero-cta">
+      <a href="#flowers" class="btn-primary">Смотреть цветы</a>
+      <a href="#prices" class="btn-secondary">Цены 2026</a>
+    </div>
+    <div class="hero-stats">
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statFlowers">23</div>
+        <div class="hero-stat-label">видов цветов</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statBouquets">10</div>
+        <div class="hero-stat-label">готовых букетов</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num" id="statArrangements">6</div>
+        <div class="hero-stat-label">сборных миксов</div>
+      </div>
+      <div class="hero-stat">
+        <div class="hero-stat-num">12</div>
+        <div class="hero-stat-label">месяцев в календаре</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     BOUQUETS
+═══════════════════════════════════════════════════ -->
+<section id="bouquets" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">💐</span>
+        <h2>Букеты</h2>
+      </div>
+      <p class="section-subtitle">Готовые композиции на любой случай — от свадебных каскадов до уютных монобукетов.</p>
+    </div>
+
+    <div class="filters-bar fade-in d1">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="filter-input" id="bouquetSearch" placeholder="Поиск по названию...">
+      </div>
+      <select class="filter-select" id="bouquetCategory">
+        <option value="all">Все категории</option>
+        <option value="wedding">💍 Свадебные</option>
+        <option value="holiday">🎉 Праздничные</option>
+        <option value="mono">🌹 Монобукеты</option>
+        <option value="box">📦 Коробки</option>
+        <option value="basket">🧺 Корзины</option>
+      </select>
+      <div class="filter-range-group">
+        <span class="filter-label">До:</span>
+        <input type="range" class="filter-range" id="bouquetPriceMax" min="500" max="10000" step="100" value="10000">
+        <span class="filter-range-val" id="bouquetPriceVal">10 000 грн</span>
+      </div>
+      <button class="filter-reset" id="bouquetReset">Сброс</button>
+    </div>
+
+    <div class="grid-3 fade-in d2" id="bouquetsGrid"></div>
+
+    <div class="load-more-wrap" id="bouquetsLoadMore" style="display:none">
+      <button class="btn-load-more" data-section="bouquets">Показать ещё</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     ARRANGEMENTS (mixed)
+═══════════════════════════════════════════════════ -->
+<section id="arrangements" class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">🌿</span>
+        <h2>Сборы цветов</h2>
+      </div>
+      <p class="section-subtitle">Сборные композиции из 3–5 видов — гармоничные сочетания для каждого сезона.</p>
+    </div>
+
+    <div class="filters-bar fade-in d1">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="filter-input" id="arrangSearch" placeholder="Поиск миксов...">
+      </div>
+      <select class="filter-select" id="arrangSeason">
+        <option value="all">Любой сезон</option>
+        <option value="spring">🌷 Весна</option>
+        <option value="summer">☀️ Лето</option>
+        <option value="autumn">🍂 Осень</option>
+        <option value="winter">❄️ Зима</option>
+      </select>
+      <div class="filter-range-group">
+        <span class="filter-label">До:</span>
+        <input type="range" class="filter-range" id="arrangPriceMax" min="300" max="5000" step="100" value="5000">
+        <span class="filter-range-val" id="arrangPriceVal">5 000 грн</span>
+      </div>
+      <button class="filter-reset" id="arrangReset">Сброс</button>
+    </div>
+
+    <div class="grid-3 fade-in d2" id="arrangementsGrid"></div>
+
+    <div class="load-more-wrap" id="arrangementsLoadMore" style="display:none">
+      <button class="btn-load-more" data-section="arrangements">Показать ещё</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FLOWERS
+═══════════════════════════════════════════════════ -->
+<section id="flowers" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">🌷</span>
+        <h2>Отдельные цветы</h2>
+      </div>
+      <p class="section-subtitle">Каталог цветов с ценами Киева — символика, аромат, сезон цветения, цена за 1 шт.</p>
+    </div>
+
+    <div class="filters-bar fade-in d1">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="filter-input" id="flowerSearch" placeholder="Поиск цветка...">
+      </div>
+      <select class="filter-select" id="flowerSeason">
+        <option value="all">Любой сезон</option>
+        <option value="1">Январь</option>
+        <option value="2">Февраль</option>
+        <option value="3">Март</option>
+        <option value="4">Апрель</option>
+        <option value="5">Май</option>
+        <option value="6">Июнь</option>
+        <option value="7">Июль</option>
+        <option value="8">Август</option>
+        <option value="9">Сентябрь</option>
+        <option value="10">Октябрь</option>
+        <option value="11">Ноябрь</option>
+        <option value="12">Декабрь</option>
+      </select>
+      <select class="filter-select" id="flowerColor">
+        <option value="all">Любой цвет</option>
+        <option value="красный">🔴 Красный</option>
+        <option value="розовый">🌸 Розовый</option>
+        <option value="белый">⚪ Белый</option>
+        <option value="жёлтый">🟡 Жёлтый</option>
+        <option value="фиолетовый">🟣 Фиолетовый</option>
+        <option value="синий">🔵 Синий</option>
+        <option value="оранжевый">🟠 Оранжевый</option>
+      </select>
+      <div class="filter-range-group">
+        <span class="filter-label">До:</span>
+        <input type="range" class="filter-range" id="flowerPriceMax" min="20" max="500" step="10" value="500">
+        <span class="filter-range-val" id="flowerPriceVal">500 грн</span>
+      </div>
+      <label class="filter-chip" id="flowerDriedChip" style="cursor:pointer">
+        <input type="checkbox" id="flowerDried" style="display:none">
+        🌾 Сухоцветы
+      </label>
+      <button class="filter-reset" id="flowerReset">Сброс</button>
+    </div>
+
+    <div class="grid-3 fade-in d2" id="flowersGrid"></div>
+
+    <div class="load-more-wrap" id="flowersLoadMore" style="display:none">
+      <button class="btn-load-more" data-section="flowers">Показать ещё</button>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     PRICE TABLE
+═══════════════════════════════════════════════════ -->
+<section id="prices" class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">💰</span>
+        <h2>Цены 2025–2026</h2>
+      </div>
+      <p class="section-subtitle">Полная таблица цен — редактируй прямо здесь и отмечай те, что видела(а) лично.</p>
+    </div>
+
+    <div class="filters-bar fade-in d1">
+      <div class="search-wrap">
+        <span class="search-icon">🔍</span>
+        <input type="text" class="filter-input" id="priceSearch" placeholder="Поиск...">
+      </div>
+      <div class="filter-range-group">
+        <span class="filter-label">Цена до:</span>
+        <input type="range" class="filter-range" id="pricePriceMax" min="20" max="500" step="10" value="500">
+        <span class="filter-range-val" id="pricePriceVal">500 грн</span>
+      </div>
+      <select class="filter-select" id="priceSeason">
+        <option value="all">Все сезоны</option>
+        <option value="spring">🌷 Весна</option>
+        <option value="summer">☀️ Лето</option>
+        <option value="autumn">🍂 Осень</option>
+        <option value="winter">❄️ Зима</option>
+        <option value="year">📅 Круглый год</option>
+      </select>
+      <button class="filter-reset" id="priceReset">Сброс</button>
+    </div>
+
+    <div class="price-table-wrap fade-in d2">
+      <table class="price-table">
+        <thead>
+          <tr>
+            <th class="sortable" data-sort="name">
+              Название
+              <span class="sort-arrow" data-arrow="name">↕</span>
+            </th>
+            <th class="sortable" data-sort="priceMin">
+              Цена от
+              <span class="sort-arrow" data-arrow="priceMin">↕</span>
+            </th>
+            <th class="sortable" data-sort="priceMax">
+              Цена до
+              <span class="sort-arrow" data-arrow="priceMax">↕</span>
+            </th>
+            <th class="sortable" data-sort="season">
+              Сезон
+              <span class="sort-arrow" data-arrow="season">↕</span>
+            </th>
+            <th>Примечание</th>
+            <th>Проверено</th>
+          </tr>
+        </thead>
+        <tbody id="priceTableBody"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     CALENDAR
+═══════════════════════════════════════════════════ -->
+<section id="calendar" class="section">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">📅</span>
+        <h2>Сезонный календарь</h2>
+      </div>
+      <p class="section-subtitle">Какие цветы доступны в каждом месяце — планируй букеты заранее.</p>
+    </div>
+
+    <div class="calendar-grid fade-in d1" id="calendarGrid"></div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     INSPIRATION
+═══════════════════════════════════════════════════ -->
+<section id="inspiration" class="section" style="background:var(--bg2)">
+  <div class="container">
+    <div class="section-header fade-in">
+      <div class="section-title">
+        <span class="section-title-icon">✨</span>
+        <h2>Вдохновение</h2>
+      </div>
+      <p class="section-subtitle">Магазины, инстаграм флористов Киева и личные заметки.</p>
+    </div>
+
+    <div class="insp-layout fade-in d1">
+      <!-- Links -->
+      <div class="insp-block">
+        <h3>🔗 Любимые магазины и флористы</h3>
+        <div class="links-list" id="linksList"></div>
+        <form class="add-link-form" id="addLinkForm">
+          <input type="text" class="form-input" id="linkName" placeholder="Название" required>
+          <input type="url" class="form-input" id="linkUrl" placeholder="https://..." required>
+          <button type="submit">+ Добавить</button>
+        </form>
+      </div>
+
+      <!-- Notes -->
+      <div class="insp-block">
+        <h3>📝 Личные заметки</h3>
+        <textarea
+          class="notes-area"
+          id="notesArea"
+          placeholder="Любимые сочетания, мечты о букетах, идеи к подаркам, контакты флористов..."
+        ></textarea>
+        <div class="notes-saved-hint" id="notesHint">💾 Сохраняется автоматически</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════════════ -->
+<footer id="footer">
+  <div class="footer-inner">
+    <div class="footer-top">
+      <div>
+        <div class="footer-logo">
+          <span>🌸</span>
+          <span>Цветочный альбом Киева</span>
+        </div>
+        <p class="footer-desc">
+          Личный альбом с подборкой цветов, цен и вдохновения.
+          Все данные хранятся в твоём браузере — никаких аккаунтов
+          и серверов, только ты и твои любимые цветы.
+        </p>
+      </div>
+      <div>
+        <div class="footer-col-title">Разделы</div>
+        <ul class="footer-links-list">
+          <li><a href="#bouquets">Букеты</a></li>
+          <li><a href="#arrangements">Сборы</a></li>
+          <li><a href="#flowers">Отдельные цветы</a></li>
+          <li><a href="#prices">Цены</a></li>
+          <li><a href="#calendar">Календарь</a></li>
+          <li><a href="#inspiration">Вдохновение</a></li>
+        </ul>
+      </div>
+      <div>
+        <div class="footer-col-title">Контакты</div>
+        <ul class="footer-links-list">
+          <li>📍 Киев, Украина</li>
+          <li>💌 <span id="footerEmail">krytan53@gmail.com</span></li>
+          <li>🌐 Сделано для себя ❤️</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <div>Цветочный альбом Киева © 2025–2026</div>
+      <div class="footer-version">Версия 1.0.0 · Цены обновлены: <span id="lastUpdate">—</span></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ═══════════════════════════════════════════════════
+     MODAL - DETAIL
+═══════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="detailModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="detailTitle">Детали</div>
+      <button class="modal-close" id="detailClose">✕</button>
+    </div>
+    <div class="modal-body" id="detailBody"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     MODAL - ADD
+═══════════════════════════════════════════════════ -->
+<div class="modal-overlay" id="addModal">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-title" id="addTitle">Добавить</div>
+      <button class="modal-close" id="addClose">✕</button>
+    </div>
+    <div class="modal-body" id="addBody"></div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     FAVORITES PANEL
+═══════════════════════════════════════════════════ -->
+<div class="fav-overlay" id="favOverlay"></div>
+<aside class="fav-panel" id="favPanel">
+  <div class="fav-header">
+    <h3><span>♡</span> Избранное</h3>
+    <button class="modal-close" id="favClose">✕</button>
+  </div>
+  <div class="fav-body" id="favBody"></div>
+</aside>
+
+<!-- ═══════════════════════════════════════════════════
+     EDIT MODE BAR
+═══════════════════════════════════════════════════ -->
+<div class="edit-mode-bar" id="editBar">
+  <span>⚙️ Режим редактирования активен</span>
+  <button id="editBarOff">Выключить</button>
+</div>
+
+<!-- ═══════════════════════════════════════════════════
+     TOAST
+═══════════════════════════════════════════════════ -->
+<div class="toast" id="toast">
+  <span class="toast-icon">✓</span>
+  <span class="toast-text"></span>
+</div>
+
+<script>
+'use strict';
+
+/* ═══════════════════════════════════════════════════
+   INITIAL DATA — FLOWERS (Kyiv prices 2025–2026)
+═══════════════════════════════════════════════════ */
+const FLOWERS_DATA = [
+  { id:'f1', name:'Роза Эквадор', nameLat:'Rosa × hybrida', emoji:'🌹',
+    priceMin:80, priceMax:150, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Любовь, страсть, совершенство', scent:'средний',
+    colors:['красный','розовый','белый','жёлтый'], isDried:false,
+    note:'Крупный бутон, стебель 60–90 см. Самый популярный цветок Киева.' },
+  { id:'f2', name:'Тюльпан', nameLat:'Tulipa', emoji:'🌷',
+    priceMin:35, priceMax:70, seasons:[2,3,4,5],
+    meaning:'Весна, нежная любовь, новое начало', scent:'слабый',
+    colors:['красный','розовый','белый','жёлтый','фиолетовый'], isDried:false,
+    note:'Пик сезона — март–апрель. В феврале и мае дороже.' },
+  { id:'f3', name:'Пион', nameLat:'Paeonia', emoji:'🌸',
+    priceMin:100, priceMax:200, seasons:[5,6],
+    meaning:'Процветание, счастье, богатство', scent:'сильный',
+    colors:['розовый','белый','красный','коралловый'], isDried:false,
+    note:'Любимец флористов. Сезон короткий — успей!' },
+  { id:'f4', name:'Хризантема', nameLat:'Chrysanthemum', emoji:'🌼',
+    priceMin:40, priceMax:80, seasons:[8,9,10,11,12],
+    meaning:'Долголетие, верность, оптимизм', scent:'слабый',
+    colors:['белый','жёлтый','розовый','фиолетовый'], isDried:false,
+    note:'Стоит в вазе до 3 недель. Королева осени.' },
+  { id:'f5', name:'Кустовая роза', nameLat:'Rosa multiflora', emoji:'🌹',
+    priceMin:60, priceMax:120, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Нежность, изящество, женственность', scent:'средний',
+    colors:['розовый','белый','кремовый','персиковый'], isDried:false,
+    note:'Несколько бутонов на одном стебле — выглядит пышно.' },
+  { id:'f6', name:'Гортензия', nameLat:'Hydrangea', emoji:'💐',
+    priceMin:120, priceMax:250, seasons:[6,7,8,9],
+    meaning:'Искренность, благодарность, красота', scent:'слабый',
+    colors:['синий','розовый','белый','фиолетовый'], isDried:true,
+    note:'Огромная шапка соцветий. Отлично сохнет для сухоцветов.' },
+  { id:'f7', name:'Эустома', nameLat:'Eustoma (Lisianthus)', emoji:'🌺',
+    priceMin:50, priceMax:100, seasons:[5,6,7,8,9,10],
+    meaning:'Утончённость, признательность', scent:'слабый',
+    colors:['фиолетовый','белый','розовый','кремовый'], isDried:false,
+    note:'Похожа на розу, но воздушнее. Также зовут лизиантус.' },
+  { id:'f8', name:'Лаванда', nameLat:'Lavandula', emoji:'💜',
+    priceMin:30, priceMax:60, seasons:[6,7,8],
+    meaning:'Спокойствие, чистота, преданность', scent:'сильный',
+    colors:['фиолетовый','синий'], isDried:true,
+    note:'Прекрасный аромат, идеально сохнет. Прованс в Киеве.' },
+  { id:'f9', name:'Нарцисс', nameLat:'Narcissus', emoji:'🌼',
+    priceMin:25, priceMax:45, seasons:[3,4],
+    meaning:'Новое начало, весна, любовь к себе', scent:'сильный',
+    colors:['белый','жёлтый'], isDried:false,
+    note:'Один из первых весенних цветов. Ярко пахнет.' },
+  { id:'f10', name:'Ирис', nameLat:'Iris', emoji:'🌸',
+    priceMin:45, priceMax:80, seasons:[4,5,8,9],
+    meaning:'Мудрость, вера, надежда', scent:'средний',
+    colors:['фиолетовый','синий','белый','жёлтый'], isDried:false,
+    note:'Символ Флоренции. Цветёт дважды в году.' },
+  { id:'f11', name:'Лилия', nameLat:'Lilium', emoji:'🌺',
+    priceMin:80, priceMax:140, seasons:[6,7,8,9],
+    meaning:'Чистота, невинность, величие', scent:'сильный',
+    colors:['белый','розовый','оранжевый','жёлтый'], isDried:false,
+    note:'Очень ароматная. Осторожно с пыльцой и кошками!' },
+  { id:'f12', name:'Гвоздика', nameLat:'Dianthus caryophyllus', emoji:'🌹',
+    priceMin:30, priceMax:55, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Уважение, восхищение, любовь матери', scent:'средний',
+    colors:['красный','розовый','белый','фиолетовый'], isDried:false,
+    note:'Долгожитель в вазе — до 2 недель.' },
+  { id:'f13', name:'Ромашка', nameLat:'Leucanthemum vulgare', emoji:'🌼',
+    priceMin:20, priceMax:40, seasons:[6,7,8],
+    meaning:'Невинность, чистота, простота', scent:'слабый',
+    colors:['белый'], isDried:true,
+    note:'Символ лета и беззаботности. Можно сушить.' },
+  { id:'f14', name:'Мак', nameLat:'Papaver', emoji:'🌺',
+    priceMin:30, priceMax:60, seasons:[5,6],
+    meaning:'Память, утешение, нежность', scent:'слабый',
+    colors:['красный','оранжевый','розовый','белый'], isDried:false,
+    note:'Очень нежный — лепестки опадают быстро.' },
+  { id:'f15', name:'Астра', nameLat:'Aster', emoji:'🌸',
+    priceMin:30, priceMax:60, seasons:[8,9,10],
+    meaning:'Терпение, элегантность, любовь', scent:'слабый',
+    colors:['фиолетовый','розовый','белый','синий'], isDried:false,
+    note:'Народный осенний цветок Украины.' },
+  { id:'f16', name:'Фрезия', nameLat:'Freesia', emoji:'🌸',
+    priceMin:50, priceMax:90, seasons:[2,3,4,5,10,11],
+    meaning:'Доверие, дружба, невинность', scent:'сильный',
+    colors:['белый','жёлтый','розовый','фиолетовый'], isDried:false,
+    note:'Один из самых ароматных срезанных цветов.' },
+  { id:'f17', name:'Гербера', nameLat:'Gerbera', emoji:'🌸',
+    priceMin:45, priceMax:80, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Радость, оптимизм, бодрость', scent:'слабый',
+    colors:['красный','розовый','оранжевый','жёлтый','белый'], isDried:false,
+    note:'Яркая и жизнерадостная — круглый год.' },
+  { id:'f18', name:'Орхидея', nameLat:'Orchidaceae', emoji:'🌸',
+    priceMin:200, priceMax:400, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Роскошь, изысканность, экзотика', scent:'слабый',
+    colors:['белый','фиолетовый','розовый','жёлтый'], isDried:false,
+    note:'Цена за ветку. Очень долго стоит в вазе.' },
+  { id:'f19', name:'Подсолнух', nameLat:'Helianthus annuus', emoji:'🌻',
+    priceMin:40, priceMax:80, seasons:[7,8,9],
+    meaning:'Верность, оптимизм, солнце', scent:'слабый',
+    colors:['жёлтый','оранжевый'], isDried:true,
+    note:'Символ Украины 💛💙 Хорошо сохнет.' },
+  { id:'f20', name:'Космея', nameLat:'Cosmos bipinnatus', emoji:'🌸',
+    priceMin:25, priceMax:45, seasons:[8,9,10],
+    meaning:'Лёгкость, женственность, гармония', scent:'слабый',
+    colors:['розовый','белый','фиолетовый'], isDried:true,
+    note:'Нежная и воздушная. Хорошо смотрится в полевых букетах.' },
+  { id:'f21', name:'Ранункулюс', nameLat:'Ranunculus', emoji:'🌸',
+    priceMin:80, priceMax:150, seasons:[3,4,5],
+    meaning:'Очарование, притяжение, привязанность', scent:'слабый',
+    colors:['розовый','белый','красный','жёлтый','оранжевый'], isDried:false,
+    note:'Похож одновременно на розу и пион — фаворит весны.' },
+  { id:'f22', name:'Дельфиниум', nameLat:'Delphinium', emoji:'💐',
+    priceMin:60, priceMax:120, seasons:[6,7],
+    meaning:'Великодушие, весёлость, воздушность', scent:'слабый',
+    colors:['синий','фиолетовый','белый','розовый'], isDried:true,
+    note:'Высокие голубые соцветия — добавляют объём букету.' },
+  { id:'f23', name:'Сухоцветы (микс)', nameLat:'Dried flowers mix', emoji:'🌾',
+    priceMin:25, priceMax:50, seasons:[1,2,3,4,5,6,7,8,9,10,11,12],
+    meaning:'Память, вечность, домашний уют', scent:'слабый',
+    colors:['бежевый','коричневый','кремовый'], isDried:true,
+    note:'Пампасная трава, статица, лагурус, гипсофила, лунария.' },
+];
+
+/* ═══════════════════════════════════════════════════
+   INITIAL DATA — BOUQUETS
+═══════════════════════════════════════════════════ */
+const BOUQUETS_DATA = [
+  { id:'b1', name:'Свадебный каскад', category:'wedding', priceMin:2500, priceMax:5000,
+    emoji:'👰', colors:['белый','кремовый','розовый'],
+    meaning:'Элегантность, начало совместного пути',
+    note:'Пионы, розы, эустома, гортензия, зелень. Удлинённая каскадная форма.' },
+  { id:'b2', name:'Монобукет из роз (25 шт)', category:'mono', priceMin:800, priceMax:1500,
+    emoji:'🌹', colors:['красный','розовый'],
+    meaning:'Классика выражения любви',
+    note:'25 эквадорских роз 60–80 см в крафте или сетке.' },
+  { id:'b3', name:'Коробка с пионами', category:'box', priceMin:1200, priceMax:2500,
+    emoji:'📦', colors:['розовый','белый'],
+    meaning:'Роскошь, эффектный сюрприз',
+    note:'Круглая шляпная коробка, 15–25 пионов с зеленью.' },
+  { id:'b4', name:'Праздничная корзина', category:'basket', priceMin:1500, priceMax:3000,
+    emoji:'🧺', colors:['разноцветный'],
+    meaning:'Торжество, изобилие',
+    note:'Плетёная корзина, смешанная флористика, оазис.' },
+  { id:'b5', name:'Летний микс', category:'holiday', priceMin:600, priceMax:1200,
+    emoji:'🌻', colors:['жёлтый','оранжевый'],
+    meaning:'Радость, лёгкость, ощущение лета',
+    note:'Подсолнухи, ромашки, герберы, дельфиниум.' },
+  { id:'b6', name:'Монобукет из хризантем', category:'mono', priceMin:500, priceMax:900,
+    emoji:'🌼', colors:['белый','жёлтый'],
+    meaning:'Долголетие, верность',
+    note:'7–11 кустовых хризантем с эвкалиптом.' },
+  { id:'b7', name:'Сухоцветный букет', category:'holiday', priceMin:400, priceMax:800,
+    emoji:'🌾', colors:['бежевый','коричневый'],
+    meaning:'Вечность, бохо-эстетика',
+    note:'Пампасная трава, статица, лаванда, лагурус. Стоит вечно.' },
+  { id:'b8', name:'Нежный весенний', category:'holiday', priceMin:700, priceMax:1400,
+    emoji:'🌷', colors:['розовый','белый'],
+    meaning:'Весна, обновление, нежность',
+    note:'Тюльпаны, нарциссы, ранункулюс, фрезия.' },
+  { id:'b9', name:'Монобукет тюльпанов', category:'mono', priceMin:350, priceMax:700,
+    emoji:'🌷', colors:['красный','розовый','белый'],
+    meaning:'Признание в любви',
+    note:'21–51 тюльпан, по сезону (февраль–май).' },
+  { id:'b10', name:'Букет невесты', category:'wedding', priceMin:1500, priceMax:3500,
+    emoji:'💐', colors:['белый','кремовый'],
+    meaning:'Чистота, новое начало',
+    note:'Классический круглый букет: розы, пионы, эустома, гипсофила.' },
+];
+
+/* ═══════════════════════════════════════════════════
+   INITIAL DATA — ARRANGEMENTS
+═══════════════════════════════════════════════════ */
+const ARRANGEMENTS_DATA = [
+  { id:'a1', name:'Нежный романтик', flowers:['Пион','Роза Эквадор','Эустома','Гипсофила'],
+    priceMin:1200, priceMax:2000, seasons:[5,6], emoji:'🌸',
+    colors:['розовый','белый'], note:'Пудровая нежно-розовая гамма для романтических поводов.' },
+  { id:'a2', name:'Летний взрыв', flowers:['Подсолнух','Ромашка','Гербера','Дельфиниум'],
+    priceMin:700, priceMax:1300, seasons:[7,8], emoji:'🌻',
+    colors:['жёлтый','синий'], note:'Яркие, насыщенные летние оттенки. Энергия солнца.' },
+  { id:'a3', name:'Осенний уют', flowers:['Хризантема','Астра','Гербера','Космея'],
+    priceMin:600, priceMax:1100, seasons:[9,10], emoji:'🍂',
+    colors:['оранжевый','фиолетовый'], note:'Тёплая осенняя палитра — терракот, бордо, охра.' },
+  { id:'a4', name:'Весенняя сказка', flowers:['Тюльпан','Нарцисс','Ранункулюс','Фрезия'],
+    priceMin:500, priceMax:1000, seasons:[3,4,5], emoji:'🌷',
+    colors:['розовый','жёлтый'], note:'Свежесть, аромат и пастельные краски марта.' },
+  { id:'a5', name:'Фиолетовая мечта', flowers:['Гортензия','Дельфиниум','Лаванда','Эустома'],
+    priceMin:900, priceMax:1800, seasons:[6,7], emoji:'💜',
+    colors:['фиолетовый','синий'], note:'Холодная лавандовая гамма с ароматом прованса.' },
+  { id:'a6', name:'Бохо-сухоцветы', flowers:['Пампасная трава','Лаванда','Подсолнух','Космея'],
+    priceMin:400, priceMax:800, seasons:[1,2,3,4,5,6,7,8,9,10,11,12], emoji:'🌾',
+    colors:['бежевый','коричневый'], note:'Вечный букет — не вянет, не требует воды.' },
+];
+
+const CATEGORY_LABELS = {
+  wedding: '💍 Свадебный', holiday: '🎉 Праздничный',
+  mono: '🌹 Монобукет', box: '📦 Коробка', basket: '🧺 Корзина'
+};
+
+const MONTH_NAMES = ['Январь','Февраль','Март','Апрель','Май','Июнь',
+                     'Июль','Август','Сентябрь','Октябрь','Ноябрь','Декабрь'];
+const MONTH_SHORT = ['Янв','Фев','Мар','Апр','Май','Июн','Июл','Авг','Сен','Окт','Ноя','Дек'];
+
+const COLOR_GRADIENT_MAP = {
+  'красный':     '#ff6b8a, #c0392b',
+  'розовый':     '#fd79a8, #e84393',
+  'белый':       '#dfe6e9, #95a5a6',
+  'жёлтый':      '#ffeaa7, #f1c40f',
+  'синий':       '#74b9ff, #2980b9',
+  'фиолетовый':  '#a29bfe, #6c5ce7',
+  'оранжевый':   '#fab1a0, #e17055',
+  'коралловый':  '#fd79a8, #e17055',
+  'персиковый':  '#ffeaa7, #fd79a8',
+  'кремовый':    '#fef9e7, #f0e6c8',
+  'бежевый':     '#dfd5c5, #b8a898',
+  'коричневый':  '#c9a78b, #8d6e63',
+  'разноцветный':'#fd79a8, #74b9ff',
+  'зелёный':     '#00b894, #00cec9',
+};
+const COLOR_DOT_MAP = {
+  'красный':'#e74c3c','розовый':'#e84393','белый':'#ecf0f1','жёлтый':'#f1c40f',
+  'синий':'#3498db','фиолетовый':'#9b59b6','оранжевый':'#e67e22','коралловый':'#ff7675',
+  'персиковый':'#fab1a0','кремовый':'#fdf3d4','бежевый':'#d4c3a8','коричневый':'#a0826d',
+  'разноцветный':'linear-gradient(135deg,#e84393,#74b9ff,#f1c40f)','зелёный':'#27ae60',
+};
+
+const SEASON_GROUPS = {
+  spring: [3,4,5],
+  summer: [6,7,8],
+  autumn: [9,10,11],
+  winter: [12,1,2],
+  year:   [1,2,3,4,5,6,7,8,9,10,11,12],
+};
+
+const LS_KEY = 'flowerAlbumKyiv_v1';
+const VERSION = '1.0.0';
+const LAST_UPDATE = '24 мая 2026';
+
+/* ═══════════════════════════════════════════════════
+   STATE
+═══════════════════════════════════════════════════ */
+const DEFAULT_STATE = {
+  theme: 'dark',
+  editMode: false,
+  favorites: [],          // [{type, id}]
+  notes: '',
+  links: [
+    { name:'Flowerstore.ua', url:'https://flowerstore.ua' },
+    { name:'UaFlowers Kyiv', url:'https://uaflowers.com' },
+    { name:'Цветы.ua', url:'https://tsvety.ua' },
+  ],
+  verifiedPrices: {},      // { flowerId: true }
+  userPrices: {},          // { flowerId: { priceMin, priceMax } }
+  customFlowers: [],
+  customBouquets: [],
+  customArrangements: [],
+};
+let state = JSON.parse(JSON.stringify(DEFAULT_STATE));
+let visibleCounts = { flowers: 12, bouquets: 12, arrangements: 12 };
+let priceSort = { by: 'name', dir: 'asc' };
+
+/* ═══════════════════════════════════════════════════
+   STORAGE
+═══════════════════════════════════════════════════ */
+function loadState() {
+  try {
+    const saved = localStorage.getItem(LS_KEY);
+    if (saved) {
+      const data = JSON.parse(saved);
+      state = { ...DEFAULT_STATE, ...data };
+      // defensive defaults
+      state.favorites = state.favorites || [];
+      state.links = state.links || DEFAULT_STATE.links;
+      state.verifiedPrices = state.verifiedPrices || {};
+      state.userPrices = state.userPrices || {};
+      state.customFlowers = state.customFlowers || [];
+      state.customBouquets = state.customBouquets || [];
+      state.customArrangements = state.customArrangements || [];
+    }
+  } catch (e) {
+    console.warn('Failed to load state:', e);
+  }
+}
+function saveState() {
+  try { localStorage.setItem(LS_KEY, JSON.stringify(state)); }
+  catch (e) { console.warn('Failed to save state:', e); }
+}
+
+/* ═══════════════════════════════════════════════════
+   UTILS
+═══════════════════════════════════════════════════ */
+const $ = (sel, ctx = document) => ctx.querySelector(sel);
+const $$ = (sel, ctx = document) => [...ctx.querySelectorAll(sel)];
+
+function getGradient(colors) {
+  const c = Array.isArray(colors) ? colors[0] : colors;
+  const stops = COLOR_GRADIENT_MAP[c] || COLOR_GRADIENT_MAP['розовый'];
+  return `linear-gradient(135deg, ${stops})`;
+}
+function getColorDot(c) {
+  const v = COLOR_DOT_MAP[c];
+  if (!v) return 'background:#ccc;';
+  if (v.startsWith('linear-gradient')) return `background:${v};`;
+  return `background:${v};`;
+}
+function formatPrice(min, max) {
+  return `${min}–${max} грн`;
+}
+function getEffectivePrice(item) {
+  const u = state.userPrices[item.id];
+  if (u) return { priceMin: u.priceMin, priceMax: u.priceMax, isCustomPrice:true };
+  return { priceMin: item.priceMin, priceMax: item.priceMax, isCustomPrice:false };
+}
+function getSeasonLabel(seasons) {
+  if (!seasons || seasons.length === 0) return '—';
+  if (seasons.length === 12) return 'Круглый год';
+  const sorted = [...seasons].sort((a,b) => a-b);
+  // try to detect range
+  let isRange = true;
+  for (let i = 1; i < sorted.length; i++) {
+    if (sorted[i] !== sorted[i-1]+1) { isRange = false; break; }
+  }
+  if (isRange && sorted.length > 1) {
+    return `${MONTH_SHORT[sorted[0]-1]}–${MONTH_SHORT[sorted[sorted.length-1]-1]}`;
+  }
+  return sorted.map(m => MONTH_SHORT[m-1]).join(', ');
+}
+function getSeasonKey(seasons) {
+  if (!seasons || seasons.length === 12) return 'year';
+  const has = (months) => months.some(m => seasons.includes(m));
+  // primary key by majority
+  const counts = {
+    spring: seasons.filter(m => [3,4,5].includes(m)).length,
+    summer: seasons.filter(m => [6,7,8].includes(m)).length,
+    autumn: seasons.filter(m => [9,10,11].includes(m)).length,
+    winter: seasons.filter(m => [12,1,2].includes(m)).length,
+  };
+  let best = 'year', max = 0;
+  for (const k in counts) {
+    if (counts[k] > max) { max = counts[k]; best = k; }
+  }
+  return best;
+}
+function getAllFlowers() { return [...FLOWERS_DATA, ...state.customFlowers]; }
+function getAllBouquets() { return [...BOUQUETS_DATA, ...state.customBouquets]; }
+function getAllArrangements() { return [...ARRANGEMENTS_DATA, ...state.customArrangements]; }
+
+function isFavorite(type, id) {
+  return state.favorites.some(f => f.type === type && f.id === id);
+}
+function toggleFavorite(type, id) {
+  const idx = state.favorites.findIndex(f => f.type === type && f.id === id);
+  if (idx >= 0) state.favorites.splice(idx, 1);
+  else state.favorites.push({ type, id });
+  saveState();
+  updateFavCount();
+  renderAllSections();
+  renderFavoritesPanel();
+}
+function updateFavCount() {
+  const el = $('#favCount');
+  if (state.favorites.length > 0) {
+    el.textContent = state.favorites.length;
+    el.classList.remove('hidden');
+  } else {
+    el.classList.add('hidden');
+  }
+}
+
+function showToast(msg, isError = false) {
+  const t = $('#toast');
+  t.querySelector('.toast-text').textContent = msg;
+  t.querySelector('.toast-icon').textContent = isError ? '⚠' : '✓';
+  t.classList.toggle('error', isError);
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2400);
+}
+
+/* ═══════════════════════════════════════════════════
+   THEME
+═══════════════════════════════════════════════════ */
+function applyTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  $('#themeBtn').textContent = theme === 'dark' ? '🌙' : '☀️';
+  $('#themeBtn').title = theme === 'dark' ? 'Светлая тема' : 'Тёмная тема';
+}
+function toggleTheme() {
+  state.theme = state.theme === 'dark' ? 'light' : 'dark';
+  applyTheme(state.theme);
+  saveState();
+}
+
+/* ═══════════════════════════════════════════════════
+   FILTERS STATE
+═══════════════════════════════════════════════════ */
+const filters = {
+  bouquets:    { search:'', category:'all', priceMax:10000 },
+  arrangements:{ search:'', season:'all',   priceMax:5000 },
+  flowers:     { search:'', season:'all', color:'all', priceMax:500, dried:false },
+  prices:      { search:'', season:'all', priceMax:500 },
+};
+
+/* ═══════════════════════════════════════════════════
+   RENDER — BOUQUETS
+═══════════════════════════════════════════════════ */
+function getFilteredBouquets() {
+  const f = filters.bouquets;
+  return getAllBouquets().filter(b => {
+    if (f.search && !b.name.toLowerCase().includes(f.search.toLowerCase())) return false;
+    if (f.category !== 'all' && b.category !== f.category) return false;
+    const ep = getEffectivePrice(b);
+    if (ep.priceMin > f.priceMax) return false;
+    return true;
+  });
+}
+function renderBouquets() {
+  const grid = $('#bouquetsGrid');
+  const all = getFilteredBouquets();
+  const visible = all.slice(0, visibleCounts.bouquets);
+
+  if (all.length === 0) {
+    grid.innerHTML = emptyHTML('Букеты не найдены — измени фильтры или добавь свой');
+    grid.appendChild(addCardBtn('bouquet'));
+    $('#bouquetsLoadMore').style.display = 'none';
+    return;
+  }
+
+  grid.innerHTML = visible.map(b => renderBouquetCard(b)).join('');
+  grid.appendChild(addCardBtn('bouquet'));
+
+  $('#bouquetsLoadMore').style.display = visible.length < all.length ? 'block' : 'none';
+}
+function renderBouquetCard(b) {
+  const isCustom = state.customBouquets.some(x => x.id === b.id);
+  const ep = getEffectivePrice(b);
+  const fav = isFavorite('bouquet', b.id);
+  const imgStyle = b.imageUrl
+    ? `background-image:url('${escapeAttr(b.imageUrl)}'); background-size:cover; background-position:center;`
+    : `background:${getGradient(b.colors)}`;
+  return `
+  <article class="card ${isCustom ? 'is-custom' : ''}" data-type="bouquet" data-id="${b.id}">
+    <button class="card-fav ${fav ? 'active' : ''}" data-fav="bouquet:${b.id}" title="В избранное">${fav ? '♥' : '♡'}</button>
+    ${isCustom ? `<button class="card-del" data-del="bouquet:${b.id}" title="Удалить">✕</button>` : ''}
+    <div class="card-img-wrap" style="${imgStyle}">
+      ${!b.imageUrl ? `<span class="card-emoji">${b.emoji || '💐'}</span>` : ''}
+    </div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3 class="card-title">${escapeHtml(b.name)}</h3>
+      </div>
+      <div class="card-meta">${CATEGORY_LABELS[b.category] || b.category}</div>
+      <div class="card-price">
+        <span class="card-price-edit" data-edit-price="${b.id}" contenteditable="false">${formatPrice(ep.priceMin, ep.priceMax)}</span>
+      </div>
+      <div class="tags">
+        ${(b.colors || []).slice(0,3).map(c => `<span class="tag"><span class="color-dot" style="${getColorDot(c)}"></span>${c}</span>`).join('')}
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — ARRANGEMENTS
+═══════════════════════════════════════════════════ */
+function getFilteredArrangements() {
+  const f = filters.arrangements;
+  return getAllArrangements().filter(a => {
+    if (f.search && !a.name.toLowerCase().includes(f.search.toLowerCase())) return false;
+    const ep = getEffectivePrice(a);
+    if (ep.priceMin > f.priceMax) return false;
+    if (f.season !== 'all') {
+      const months = SEASON_GROUPS[f.season];
+      if (!months.some(m => (a.seasons || []).includes(m))) return false;
+    }
+    return true;
+  });
+}
+function renderArrangements() {
+  const grid = $('#arrangementsGrid');
+  const all = getFilteredArrangements();
+  const visible = all.slice(0, visibleCounts.arrangements);
+  if (all.length === 0) {
+    grid.innerHTML = emptyHTML('Сборы не найдены — попробуй другие фильтры');
+    grid.appendChild(addCardBtn('arrangement'));
+    $('#arrangementsLoadMore').style.display = 'none';
+    return;
+  }
+  grid.innerHTML = visible.map(a => renderArrangementCard(a)).join('');
+  grid.appendChild(addCardBtn('arrangement'));
+  $('#arrangementsLoadMore').style.display = visible.length < all.length ? 'block' : 'none';
+}
+function renderArrangementCard(a) {
+  const isCustom = state.customArrangements.some(x => x.id === a.id);
+  const ep = getEffectivePrice(a);
+  const fav = isFavorite('arrangement', a.id);
+  const imgStyle = a.imageUrl
+    ? `background-image:url('${escapeAttr(a.imageUrl)}'); background-size:cover; background-position:center;`
+    : `background:${getGradient(a.colors)}`;
+  return `
+  <article class="card ${isCustom ? 'is-custom' : ''}" data-type="arrangement" data-id="${a.id}">
+    <button class="card-fav ${fav ? 'active' : ''}" data-fav="arrangement:${a.id}">${fav ? '♥' : '♡'}</button>
+    ${isCustom ? `<button class="card-del" data-del="arrangement:${a.id}">✕</button>` : ''}
+    <div class="card-img-wrap" style="${imgStyle}">
+      ${!a.imageUrl ? `<span class="card-emoji">${a.emoji || '🌿'}</span>` : ''}
+    </div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3 class="card-title">${escapeHtml(a.name)}</h3>
+      </div>
+      <div class="card-meta">${(a.flowers || []).slice(0,4).join(' · ')}</div>
+      <div class="card-price">
+        <span class="card-price-edit" data-edit-price="${a.id}">${formatPrice(ep.priceMin, ep.priceMax)}</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-season">🗓 ${getSeasonLabel(a.seasons)}</span>
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — FLOWERS
+═══════════════════════════════════════════════════ */
+function getFilteredFlowers() {
+  const f = filters.flowers;
+  return getAllFlowers().filter(fl => {
+    if (f.search) {
+      const q = f.search.toLowerCase();
+      const inName = fl.name.toLowerCase().includes(q);
+      const inLat = (fl.nameLat || '').toLowerCase().includes(q);
+      if (!inName && !inLat) return false;
+    }
+    if (f.season !== 'all') {
+      const m = parseInt(f.season, 10);
+      if (!(fl.seasons || []).includes(m)) return false;
+    }
+    if (f.color !== 'all') {
+      if (!(fl.colors || []).includes(f.color)) return false;
+    }
+    const ep = getEffectivePrice(fl);
+    if (ep.priceMin > f.priceMax) return false;
+    if (f.dried && !fl.isDried) return false;
+    return true;
+  });
+}
+function renderFlowers() {
+  const grid = $('#flowersGrid');
+  const all = getFilteredFlowers();
+  const visible = all.slice(0, visibleCounts.flowers);
+  if (all.length === 0) {
+    grid.innerHTML = emptyHTML('Цветы не найдены — попробуй сбросить фильтры');
+    grid.appendChild(addCardBtn('flower'));
+    $('#flowersLoadMore').style.display = 'none';
+    return;
+  }
+  grid.innerHTML = visible.map(fl => renderFlowerCard(fl)).join('');
+  grid.appendChild(addCardBtn('flower'));
+  $('#flowersLoadMore').style.display = visible.length < all.length ? 'block' : 'none';
+}
+function renderFlowerCard(fl) {
+  const isCustom = state.customFlowers.some(x => x.id === fl.id);
+  const ep = getEffectivePrice(fl);
+  const fav = isFavorite('flower', fl.id);
+  const imgStyle = fl.imageUrl
+    ? `background-image:url('${escapeAttr(fl.imageUrl)}'); background-size:cover; background-position:center;`
+    : `background:${getGradient(fl.colors)}`;
+  return `
+  <article class="card ${isCustom ? 'is-custom' : ''}" data-type="flower" data-id="${fl.id}">
+    <button class="card-fav ${fav ? 'active' : ''}" data-fav="flower:${fl.id}">${fav ? '♥' : '♡'}</button>
+    ${isCustom ? `<button class="card-del" data-del="flower:${fl.id}">✕</button>` : ''}
+    <div class="card-img-wrap" style="${imgStyle}">
+      ${!fl.imageUrl ? `<span class="card-emoji">${fl.emoji || '🌸'}</span>` : ''}
+    </div>
+    <div class="card-body">
+      <div class="card-head">
+        <h3 class="card-title">${escapeHtml(fl.name)}</h3>
+      </div>
+      <div class="card-subtitle">${escapeHtml(fl.nameLat || '')}</div>
+      <div class="card-price">
+        <span class="card-price-edit" data-edit-price="${fl.id}">${formatPrice(ep.priceMin, ep.priceMax)}</span>
+        <span style="font-size:.78rem; color:var(--text2); font-weight:500"> / шт</span>
+      </div>
+      <div class="tags">
+        <span class="tag tag-season">🗓 ${getSeasonLabel(fl.seasons)}</span>
+        <span class="tag tag-scent">🌬 ${fl.scent || '—'}</span>
+        ${fl.isDried ? `<span class="tag tag-dry">🌾 сухоцвет</span>` : ''}
+        ${(fl.colors || []).slice(0,2).map(c => `<span class="tag"><span class="color-dot" style="${getColorDot(c)}"></span>${c}</span>`).join('')}
+      </div>
+    </div>
+  </article>`;
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — PRICE TABLE
+═══════════════════════════════════════════════════ */
+function getFilteredPrices() {
+  const f = filters.prices;
+  return getAllFlowers().filter(fl => {
+    if (f.search && !fl.name.toLowerCase().includes(f.search.toLowerCase())) return false;
+    const ep = getEffectivePrice(fl);
+    if (ep.priceMin > f.priceMax) return false;
+    if (f.season !== 'all') {
+      const months = SEASON_GROUPS[f.season];
+      if (f.season === 'year') {
+        if (fl.seasons.length !== 12) return false;
+      } else {
+        if (!months.some(m => fl.seasons.includes(m))) return false;
+      }
+    }
+    return true;
+  });
+}
+function renderPriceTable() {
+  const tbody = $('#priceTableBody');
+  let rows = getFilteredPrices();
+
+  // sort
+  const { by, dir } = priceSort;
+  const sgn = dir === 'asc' ? 1 : -1;
+  rows.sort((a, b) => {
+    if (by === 'name') return a.name.localeCompare(b.name, 'ru') * sgn;
+    const eA = getEffectivePrice(a), eB = getEffectivePrice(b);
+    if (by === 'priceMin') return (eA.priceMin - eB.priceMin) * sgn;
+    if (by === 'priceMax') return (eA.priceMax - eB.priceMax) * sgn;
+    if (by === 'season') return (a.seasons[0] - b.seasons[0]) * sgn;
+    return 0;
+  });
+
+  // arrows
+  $$('.sort-arrow').forEach(el => {
+    if (el.dataset.arrow === by) {
+      el.textContent = dir === 'asc' ? '↑' : '↓';
+      el.classList.add('active');
+    } else {
+      el.textContent = '↕';
+      el.classList.remove('active');
+    }
+  });
+
+  if (rows.length === 0) {
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; padding:40px; color:var(--text2)">Ничего не найдено</td></tr>`;
+    return;
+  }
+
+  tbody.innerHTML = rows.map(fl => {
+    const ep = getEffectivePrice(fl);
+    const verified = !!state.verifiedPrices[fl.id];
+    return `
+    <tr data-id="${fl.id}">
+      <td>
+        <div class="name-cell">
+          <span class="emoji">${fl.emoji || '🌸'}</span>
+          <span>${escapeHtml(fl.name)}</span>
+        </div>
+      </td>
+      <td>
+        <input type="number" class="price-input" data-price-field="priceMin" data-id="${fl.id}"
+               value="${ep.priceMin}" min="0" step="1">
+      </td>
+      <td>
+        <input type="number" class="price-input" data-price-field="priceMax" data-id="${fl.id}"
+               value="${ep.priceMax}" min="0" step="1">
+      </td>
+      <td>${getSeasonLabel(fl.seasons)}</td>
+      <td style="font-size:.85rem; color:var(--text2); max-width:240px">${escapeHtml(fl.note || '—')}</td>
+      <td>
+        <label class="verified-badge ${verified ? 'checked' : ''}">
+          <input type="checkbox" data-verify="${fl.id}" ${verified ? 'checked' : ''}>
+          <span class="verified-text">${verified ? 'видела' : 'отметить'}</span>
+        </label>
+      </td>
+    </tr>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — CALENDAR
+═══════════════════════════════════════════════════ */
+function renderCalendar() {
+  const grid = $('#calendarGrid');
+  const allFlowers = getAllFlowers();
+  const currentMonth = new Date().getMonth() + 1;
+
+  grid.innerHTML = MONTH_NAMES.map((name, i) => {
+    const month = i + 1;
+    const inSeason = allFlowers.filter(f => (f.seasons || []).includes(month));
+    const isCurrent = month === currentMonth;
+    return `
+    <div class="month-card ${isCurrent ? 'current' : ''}">
+      <div class="month-name">
+        <span>${name}</span>
+        ${isCurrent ? '<span class="month-badge">🎯 Сейчас сезон</span>' : ''}
+      </div>
+      <div class="month-count">${inSeason.length} ${pluralFlower(inSeason.length)}</div>
+      <div class="month-flowers">
+        ${inSeason.slice(0, 8).map(f =>
+          `<span class="month-flower-tag" data-jump="${f.id}">${f.emoji || '🌸'} ${escapeHtml(f.name)}</span>`
+        ).join('')}
+        ${inSeason.length > 8 ? `<span class="month-flower-tag">+${inSeason.length - 8}</span>` : ''}
+      </div>
+    </div>`;
+  }).join('');
+}
+function pluralFlower(n) {
+  const mod10 = n % 10, mod100 = n % 100;
+  if (mod10 === 1 && mod100 !== 11) return 'цветок';
+  if ([2,3,4].includes(mod10) && ![12,13,14].includes(mod100)) return 'цветка';
+  return 'цветков';
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — INSPIRATION
+═══════════════════════════════════════════════════ */
+function renderLinks() {
+  const list = $('#linksList');
+  if (!state.links || state.links.length === 0) {
+    list.innerHTML = '<div style="color:var(--text2); font-size:.9rem; padding:8px 0">Пока пусто — добавь свою ссылку ниже ↓</div>';
+    return;
+  }
+  list.innerHTML = state.links.map((l, i) => `
+    <div class="link-item">
+      <span class="link-icon">🔗</span>
+      <div class="link-info">
+        <div class="link-name">${escapeHtml(l.name)}</div>
+        <a class="link-url" href="${escapeAttr(l.url)}" target="_blank" rel="noopener">${escapeHtml(l.url)}</a>
+      </div>
+      <button class="link-del" data-del-link="${i}" title="Удалить">✕</button>
+    </div>
+  `).join('');
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER — FAVORITES PANEL
+═══════════════════════════════════════════════════ */
+function renderFavoritesPanel() {
+  const body = $('#favBody');
+  if (state.favorites.length === 0) {
+    body.innerHTML = `
+      <div class="fav-empty">
+        <span class="fav-empty-icon">♡</span>
+        <div>Здесь будут карточки, которые ты добавишь в избранное.</div>
+        <div style="margin-top:8px; font-size:.85rem">Нажми ♡ на любой карточке.</div>
+      </div>`;
+    return;
+  }
+  body.innerHTML = state.favorites.map(f => {
+    let item, typeLabel;
+    if (f.type === 'flower') { item = getAllFlowers().find(x => x.id === f.id); typeLabel = 'Цветок'; }
+    else if (f.type === 'bouquet') { item = getAllBouquets().find(x => x.id === f.id); typeLabel = 'Букет'; }
+    else { item = getAllArrangements().find(x => x.id === f.id); typeLabel = 'Сбор'; }
+    if (!item) return '';
+    const ep = getEffectivePrice(item);
+    const imgStyle = item.imageUrl
+      ? `background-image:url('${escapeAttr(item.imageUrl)}'); background-size:cover;`
+      : `background:${getGradient(item.colors)}`;
+    return `
+    <div class="fav-card" data-jump-card="${f.type}:${f.id}">
+      <div class="fav-card-img" style="${imgStyle}">${!item.imageUrl ? (item.emoji || '🌸') : ''}</div>
+      <div class="fav-card-info">
+        <div class="fav-card-type">${typeLabel}</div>
+        <div class="fav-card-name">${escapeHtml(item.name)}</div>
+        <div class="fav-card-price">${formatPrice(ep.priceMin, ep.priceMax)}</div>
+      </div>
+      <button class="fav-remove" data-unfav="${f.type}:${f.id}" title="Убрать">✕</button>
+    </div>`;
+  }).join('');
+}
+
+/* ═══════════════════════════════════════════════════
+   RENDER ALL
+═══════════════════════════════════════════════════ */
+function renderAllSections() {
+  renderBouquets();
+  renderArrangements();
+  renderFlowers();
+  renderPriceTable();
+  renderCalendar();
+  updateStats();
+}
+function updateStats() {
+  $('#statFlowers').textContent = getAllFlowers().length;
+  $('#statBouquets').textContent = getAllBouquets().length;
+  $('#statArrangements').textContent = getAllArrangements().length;
+}
+
+/* ═══════════════════════════════════════════════════
+   HELPERS — HTML
+═══════════════════════════════════════════════════ */
+function escapeHtml(str) {
+  if (str == null) return '';
+  return String(str)
+    .replace(/&/g, '&amp;').replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;').replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;');
+}
+function escapeAttr(str) { return escapeHtml(str); }
+function emptyHTML(msg) {
+  return `<div class="empty-state" style="grid-column:1/-1">
+    <div class="empty-state-icon">🌱</div>
+    <div class="empty-state-text">${msg}</div>
+  </div>`;
+}
+function addCardBtn(type) {
+  const labels = { flower:'+ Добавить цветок', bouquet:'+ Добавить букет', arrangement:'+ Добавить сбор' };
+  const btn = document.createElement('button');
+  btn.className = 'add-card-btn';
+  btn.dataset.addType = type;
+  btn.innerHTML = `<span class="add-icon">＋</span><span>${labels[type]}</span>`;
+  return btn;
+}
+
+/* ═══════════════════════════════════════════════════
+   MODAL — DETAIL
+═══════════════════════════════════════════════════ */
+function openDetailModal(type, id) {
+  let item, kind;
+  if (type === 'flower') { item = getAllFlowers().find(x => x.id === id); kind = 'Цветок'; }
+  else if (type === 'bouquet') { item = getAllBouquets().find(x => x.id === id); kind = 'Букет'; }
+  else { item = getAllArrangements().find(x => x.id === id); kind = 'Сбор'; }
+  if (!item) return;
+
+  const ep = getEffectivePrice(item);
+  const fav = isFavorite(type, id);
+  const imgStyle = item.imageUrl
+    ? `background-image:url('${escapeAttr(item.imageUrl)}'); background-size:cover; background-position:center;`
+    : `background:${getGradient(item.colors)}`;
+
+  let fieldsHTML = '';
+  if (type === 'flower') {
+    fieldsHTML = `
+      <div class="modal-grid">
+        <div class="modal-field"><label>Латинское</label><div class="modal-field-val">${escapeHtml(item.nameLat || '—')}</div></div>
+        <div class="modal-field"><label>Аромат</label><div class="modal-field-val">🌬 ${escapeHtml(item.scent || '—')}</div></div>
+        <div class="modal-field"><label>Сухоцвет</label><div class="modal-field-val">${item.isDried ? '✓ Да' : '✗ Нет'}</div></div>
+        <div class="modal-field"><label>Символика</label><div class="modal-field-val">${escapeHtml(item.meaning || '—')}</div></div>
+      </div>`;
+  } else if (type === 'bouquet') {
+    fieldsHTML = `
+      <div class="modal-grid">
+        <div class="modal-field"><label>Категория</label><div class="modal-field-val">${CATEGORY_LABELS[item.category] || item.category}</div></div>
+        <div class="modal-field"><label>Символика</label><div class="modal-field-val">${escapeHtml(item.meaning || '—')}</div></div>
+      </div>`;
+  } else {
+    fieldsHTML = `
+      <div class="modal-grid">
+        <div class="modal-field" style="grid-column:1/-1">
+          <label>Состав</label>
+          <div class="modal-field-val">${(item.flowers || []).join(' · ')}</div>
+        </div>
+      </div>`;
+  }
+
+  let seasonsHTML = '';
+  if (item.seasons) {
+    seasonsHTML = `
+      <div class="modal-field" style="margin-bottom:18px">
+        <label>Сезон</label>
+        <div class="modal-seasons-row">
+          ${MONTH_SHORT.map((m, i) => `<div class="season-pill ${item.seasons.includes(i+1) ? 'active' : ''}">${m}</div>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  let colorsHTML = '';
+  if (item.colors && item.colors.length) {
+    colorsHTML = `
+      <div class="modal-field" style="margin-bottom:18px">
+        <label>Цвета</label>
+        <div class="modal-colors-row">
+          ${item.colors.map(c => `<span class="tag"><span class="color-dot" style="${getColorDot(c)}"></span>${c}</span>`).join('')}
+        </div>
+      </div>`;
+  }
+
+  $('#detailTitle').innerHTML = `${kind} · <span style="color:var(--text2); font-weight:400">${escapeHtml(item.name)}</span>`;
+  $('#detailBody').innerHTML = `
+    <div class="modal-img" style="${imgStyle}">
+      ${!item.imageUrl ? `<span class="modal-img-emoji">${item.emoji || '🌸'}</span>` : ''}
+    </div>
+    <div class="modal-title-big">${escapeHtml(item.name)}</div>
+    ${item.nameLat ? `<div class="modal-subtitle">${escapeHtml(item.nameLat)}</div>` : ''}
+    <div class="modal-price-big">${formatPrice(ep.priceMin, ep.priceMax)}${type === 'flower' ? ' / шт' : ''}</div>
+    ${fieldsHTML}
+    ${seasonsHTML}
+    ${colorsHTML}
+    ${item.note ? `<div class="modal-note">💭 ${escapeHtml(item.note)}</div>` : ''}
+    <div style="display:flex; gap:10px; margin-top:20px">
+      <button class="btn-save" data-modal-fav="${type}:${id}">${fav ? '♥ В избранном' : '♡ В избранное'}</button>
+      <button class="btn-cancel" id="detailCloseBtn">Закрыть</button>
+    </div>
+  `;
+  $('#detailModal').classList.add('open');
+}
+function closeDetailModal() { $('#detailModal').classList.remove('open'); }
+
+/* ═══════════════════════════════════════════════════
+   MODAL — ADD ITEM
+═══════════════════════════════════════════════════ */
+function openAddModal(type) {
+  const titles = {
+    flower: '🌸 Добавить цветок',
+    bouquet: '💐 Добавить букет',
+    arrangement: '🌿 Добавить сбор',
+  };
+  $('#addTitle').textContent = titles[type];
+
+  let html = '';
+  if (type === 'flower') {
+    html = `
+    <form id="addForm" data-type="flower">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Название *</label>
+          <input class="form-input" name="name" required placeholder="Например, Лилия">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Латинское</label>
+          <input class="form-input" name="nameLat" placeholder="Lilium">
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Emoji</label>
+          <input class="form-input" name="emoji" maxlength="4" value="🌸">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Аромат</label>
+          <select class="form-select" name="scent">
+            <option value="сильный">Сильный</option>
+            <option value="средний" selected>Средний</option>
+            <option value="слабый">Слабый</option>
+            <option value="нет">Нет</option>
+          </select>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Цена от (грн) *</label>
+          <input type="number" class="form-input" name="priceMin" required min="0" value="50">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Цена до (грн) *</label>
+          <input type="number" class="form-input" name="priceMax" required min="0" value="100">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Сезон цветения</label>
+        <div class="months-picker" id="monthsPicker">
+          ${MONTH_SHORT.map((m, i) => `<button type="button" class="month-pick-btn" data-month="${i+1}">${m}</button>`).join('')}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Цвет (через запятую)</label>
+        <input class="form-input" name="colors" placeholder="розовый, белый">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Символика</label>
+        <input class="form-input" name="meaning" placeholder="Любовь, чистота...">
+      </div>
+      <div class="form-group">
+        <label class="form-checkbox">
+          <input type="checkbox" name="isDried">
+          <span>🌾 Это сухоцвет</span>
+        </label>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ссылка на фото (необязательно)</label>
+        <input class="form-input" name="imageUrl" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Примечание</label>
+        <textarea class="form-textarea" name="note" placeholder="Заметки, особенности..."></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" id="addCancel">Отмена</button>
+        <button type="submit" class="btn-save">Сохранить</button>
+      </div>
+    </form>`;
+  } else if (type === 'bouquet') {
+    html = `
+    <form id="addForm" data-type="bouquet">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Название *</label>
+          <input class="form-input" name="name" required placeholder="Свадебный букет">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Emoji</label>
+          <input class="form-input" name="emoji" maxlength="4" value="💐">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Категория</label>
+        <select class="form-select" name="category">
+          <option value="wedding">💍 Свадебный</option>
+          <option value="holiday" selected>🎉 Праздничный</option>
+          <option value="mono">🌹 Монобукет</option>
+          <option value="box">📦 Коробка</option>
+          <option value="basket">🧺 Корзина</option>
+        </select>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Цена от (грн) *</label>
+          <input type="number" class="form-input" name="priceMin" required min="0" value="500">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Цена до (грн) *</label>
+          <input type="number" class="form-input" name="priceMax" required min="0" value="1500">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Цвета (через запятую)</label>
+        <input class="form-input" name="colors" placeholder="розовый, белый">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Символика</label>
+        <input class="form-input" name="meaning" placeholder="Любовь, праздник...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ссылка на фото</label>
+        <input class="form-input" name="imageUrl" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Состав/описание</label>
+        <textarea class="form-textarea" name="note" placeholder="Розы, эустома, зелень..."></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" id="addCancel">Отмена</button>
+        <button type="submit" class="btn-save">Сохранить</button>
+      </div>
+    </form>`;
+  } else {
+    html = `
+    <form id="addForm" data-type="arrangement">
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Название *</label>
+          <input class="form-input" name="name" required placeholder="Весенний микс">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Emoji</label>
+          <input class="form-input" name="emoji" maxlength="4" value="🌿">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Цветы в составе (через запятую) *</label>
+        <input class="form-input" name="flowers" required placeholder="Тюльпан, нарцисс, фрезия">
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <label class="form-label">Цена от (грн) *</label>
+          <input type="number" class="form-input" name="priceMin" required min="0" value="500">
+        </div>
+        <div class="form-group">
+          <label class="form-label">Цена до (грн) *</label>
+          <input type="number" class="form-input" name="priceMax" required min="0" value="1000">
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Сезон</label>
+        <div class="months-picker" id="monthsPicker">
+          ${MONTH_SHORT.map((m, i) => `<button type="button" class="month-pick-btn" data-month="${i+1}">${m}</button>`).join('')}
+        </div>
+      </div>
+      <div class="form-group">
+        <label class="form-label">Цвета</label>
+        <input class="form-input" name="colors" placeholder="розовый, белый">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Ссылка на фото</label>
+        <input class="form-input" name="imageUrl" placeholder="https://...">
+      </div>
+      <div class="form-group">
+        <label class="form-label">Примечание</label>
+        <textarea class="form-textarea" name="note"></textarea>
+      </div>
+      <div class="form-actions">
+        <button type="button" class="btn-cancel" id="addCancel">Отмена</button>
+        <button type="submit" class="btn-save">Сохранить</button>
+      </div>
+    </form>`;
+  }
+
+  $('#addBody').innerHTML = html;
+  $('#addModal').classList.add('open');
+
+  // Months picker
+  const picker = $('#monthsPicker');
+  if (picker) {
+    picker.addEventListener('click', e => {
+      const btn = e.target.closest('.month-pick-btn');
+      if (btn) btn.classList.toggle('active');
+    });
+  }
+
+  // Cancel button
+  $('#addCancel').addEventListener('click', closeAddModal);
+
+  // Submit
+  $('#addForm').addEventListener('submit', handleAddSubmit);
+}
+function closeAddModal() { $('#addModal').classList.remove('open'); }
+
+function handleAddSubmit(e) {
+  e.preventDefault();
+  const form = e.target;
+  const type = form.dataset.type;
+  const fd = new FormData(form);
+  const data = {};
+  for (const [k, v] of fd.entries()) data[k] = v;
+  data.id = `${type[0]}_user_${Date.now()}`;
+  data.priceMin = parseInt(data.priceMin, 10) || 0;
+  data.priceMax = parseInt(data.priceMax, 10) || 0;
+  if (data.colors) data.colors = data.colors.split(',').map(s => s.trim()).filter(Boolean);
+  data.isDried = !!data.isDried;
+  if (data.flowers && type === 'arrangement') {
+    data.flowers = data.flowers.split(',').map(s => s.trim()).filter(Boolean);
+  }
+  // Months
+  const picker = form.querySelector('#monthsPicker');
+  if (picker) {
+    const activeMonths = [...picker.querySelectorAll('.month-pick-btn.active')]
+      .map(b => parseInt(b.dataset.month, 10));
+    data.seasons = activeMonths.length > 0 ? activeMonths : [1,2,3,4,5,6,7,8,9,10,11,12];
+  }
+  if (!data.emoji) data.emoji = type === 'flower' ? '🌸' : type === 'bouquet' ? '💐' : '🌿';
+
+  if (type === 'flower') state.customFlowers.push(data);
+  else if (type === 'bouquet') state.customBouquets.push(data);
+  else state.customArrangements.push(data);
+
+  saveState();
+  renderAllSections();
+  closeAddModal();
+  showToast(`Добавлено: ${data.name}`);
+}
+
+/* ═══════════════════════════════════════════════════
+   EDIT MODE
+═══════════════════════════════════════════════════ */
+function toggleEditMode() {
+  state.editMode = !state.editMode;
+  document.body.classList.toggle('edit-mode', state.editMode);
+  $('#editBar').classList.toggle('show', state.editMode);
+  $('#editBtn').classList.toggle('active', state.editMode);
+  // Make card prices editable
+  $$('.card-price-edit').forEach(el => {
+    el.setAttribute('contenteditable', state.editMode ? 'true' : 'false');
+  });
+}
+
+/* ═══════════════════════════════════════════════════
+   HERO PETALS
+═══════════════════════════════════════════════════ */
+function createHeroPetals() {
+  const bg = $('#heroPetals');
+  if (!bg) return;
+  const petals = ['🌸','🌹','🌷','🌼','💐','🌺','🌾','🍃','🌻'];
+  for (let i = 0; i < 18; i++) {
+    const el = document.createElement('span');
+    el.className = 'hero-petal';
+    el.textContent = petals[Math.floor(Math.random() * petals.length)];
+    el.style.left = (Math.random() * 100) + 'vw';
+    el.style.animationDelay = (Math.random() * 12) + 's';
+    el.style.animationDuration = (12 + Math.random() * 10) + 's';
+    el.style.fontSize = (1.5 + Math.random() * 2.5) + 'rem';
+    bg.appendChild(el);
+  }
+}
+
+/* ═══════════════════════════════════════════════════
+   SCROLL ANIMATIONS
+═══════════════════════════════════════════════════ */
+function initScrollAnimations() {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  $$('.fade-in').forEach(el => observer.observe(el));
+}
+
+/* ═══════════════════════════════════════════════════
+   NAV HIGHLIGHT
+═══════════════════════════════════════════════════ */
+function initNavHighlight() {
+  const sections = ['hero','bouquets','arrangements','flowers','prices','calendar','inspiration'];
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        $$('.nav-link').forEach(l => l.classList.remove('active'));
+        const link = $(`.nav-link[href="#${entry.target.id}"]`);
+        if (link) link.classList.add('active');
+      }
+    });
+  }, { threshold: 0.4 });
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) observer.observe(el);
+  });
+}
+
+/* ═══════════════════════════════════════════════════
+   EVENT LISTENERS
+═══════════════════════════════════════════════════ */
+function initEvents() {
+  // Theme
+  $('#themeBtn').addEventListener('click', toggleTheme);
+
+  // Edit mode
+  $('#editBtn').addEventListener('click', toggleEditMode);
+  $('#editBarOff').addEventListener('click', toggleEditMode);
+
+  // Favorites panel
+  $('#favBtn').addEventListener('click', openFavPanel);
+  $('#favClose').addEventListener('click', closeFavPanel);
+  $('#favOverlay').addEventListener('click', closeFavPanel);
+
+  // Detail modal close
+  $('#detailClose').addEventListener('click', closeDetailModal);
+  $('#detailModal').addEventListener('click', e => {
+    if (e.target.id === 'detailModal') closeDetailModal();
+    if (e.target.id === 'detailCloseBtn') closeDetailModal();
+    const favBtn = e.target.closest('[data-modal-fav]');
+    if (favBtn) {
+      const [type, id] = favBtn.dataset.modalFav.split(':');
+      toggleFavorite(type, id);
+      openDetailModal(type, id); // refresh
+    }
+  });
+
+  // Add modal close
+  $('#addClose').addEventListener('click', closeAddModal);
+  $('#addModal').addEventListener('click', e => {
+    if (e.target.id === 'addModal') closeAddModal();
+  });
+
+  // Escape closes modals
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') {
+      closeDetailModal();
+      closeAddModal();
+      closeFavPanel();
+    }
+  });
+
+  // Card clicks (delegation)
+  document.body.addEventListener('click', e => {
+    // Fav button
+    const favBtn = e.target.closest('[data-fav]');
+    if (favBtn) {
+      e.stopPropagation();
+      const [type, id] = favBtn.dataset.fav.split(':');
+      toggleFavorite(type, id);
+      return;
+    }
+    // Delete custom item
+    const delBtn = e.target.closest('[data-del]');
+    if (delBtn) {
+      e.stopPropagation();
+      const [type, id] = delBtn.dataset.del.split(':');
+      if (confirm('Удалить эту карточку?')) {
+        if (type === 'flower') state.customFlowers = state.customFlowers.filter(x => x.id !== id);
+        else if (type === 'bouquet') state.customBouquets = state.customBouquets.filter(x => x.id !== id);
+        else state.customArrangements = state.customArrangements.filter(x => x.id !== id);
+        // Remove from favs as well
+        state.favorites = state.favorites.filter(f => !(f.type === type && f.id === id));
+        saveState();
+        renderAllSections();
+        renderFavoritesPanel();
+        updateFavCount();
+        showToast('Удалено');
+      }
+      return;
+    }
+    // Inline price edit (clicked while in edit mode)
+    const priceSpan = e.target.closest('[data-edit-price]');
+    if (priceSpan && state.editMode) {
+      e.stopPropagation();
+      priceSpan.setAttribute('contenteditable', 'true');
+      priceSpan.focus();
+      // select content
+      const range = document.createRange();
+      range.selectNodeContents(priceSpan);
+      const sel = window.getSelection();
+      sel.removeAllRanges();
+      sel.addRange(range);
+      return;
+    }
+    // Add card button
+    const addBtn = e.target.closest('[data-add-type]');
+    if (addBtn) {
+      openAddModal(addBtn.dataset.addType);
+      return;
+    }
+    // Jump from favorite card
+    const jumpFav = e.target.closest('[data-jump-card]');
+    if (jumpFav) {
+      const [type, id] = jumpFav.dataset.jumpCard.split(':');
+      closeFavPanel();
+      openDetailModal(type, id);
+      return;
+    }
+    // Jump from calendar tag
+    const jumpTag = e.target.closest('[data-jump]');
+    if (jumpTag) {
+      openDetailModal('flower', jumpTag.dataset.jump);
+      return;
+    }
+    // Card click → open detail
+    const card = e.target.closest('.card');
+    if (card) {
+      openDetailModal(card.dataset.type, card.dataset.id);
+    }
+  });
+
+  // Card price inline edit — save on blur
+  document.body.addEventListener('blur', e => {
+    const priceSpan = e.target.closest('[data-edit-price]');
+    if (!priceSpan) return;
+    priceSpan.setAttribute('contenteditable', 'false');
+    const id = priceSpan.dataset.editPrice;
+    const txt = priceSpan.textContent.replace(/\s+/g,'').replace('грн','');
+    const m = txt.match(/(\d+)[–-](\d+)/);
+    if (m) {
+      const min = parseInt(m[1], 10), max = parseInt(m[2], 10);
+      if (min > 0 && max >= min) {
+        state.userPrices[id] = { priceMin: min, priceMax: max };
+        saveState();
+        renderAllSections();
+        showToast('Цена обновлена');
+      } else {
+        renderAllSections();
+      }
+    } else {
+      renderAllSections();
+    }
+  }, true);
+
+  document.body.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      const priceSpan = e.target.closest('[data-edit-price]');
+      if (priceSpan) { e.preventDefault(); priceSpan.blur(); }
+    }
+  });
+
+  // ── Bouquet filters
+  $('#bouquetSearch').addEventListener('input', e => { filters.bouquets.search = e.target.value; visibleCounts.bouquets = 12; renderBouquets(); });
+  $('#bouquetCategory').addEventListener('change', e => { filters.bouquets.category = e.target.value; visibleCounts.bouquets = 12; renderBouquets(); });
+  $('#bouquetPriceMax').addEventListener('input', e => {
+    filters.bouquets.priceMax = parseInt(e.target.value, 10);
+    $('#bouquetPriceVal').textContent = filters.bouquets.priceMax.toLocaleString('ru') + ' грн';
+    visibleCounts.bouquets = 12; renderBouquets();
+  });
+  $('#bouquetReset').addEventListener('click', () => {
+    filters.bouquets = { search:'', category:'all', priceMax:10000 };
+    $('#bouquetSearch').value = ''; $('#bouquetCategory').value = 'all';
+    $('#bouquetPriceMax').value = 10000; $('#bouquetPriceVal').textContent = '10 000 грн';
+    visibleCounts.bouquets = 12; renderBouquets();
+  });
+
+  // ── Arrangement filters
+  $('#arrangSearch').addEventListener('input', e => { filters.arrangements.search = e.target.value; visibleCounts.arrangements = 12; renderArrangements(); });
+  $('#arrangSeason').addEventListener('change', e => { filters.arrangements.season = e.target.value; visibleCounts.arrangements = 12; renderArrangements(); });
+  $('#arrangPriceMax').addEventListener('input', e => {
+    filters.arrangements.priceMax = parseInt(e.target.value, 10);
+    $('#arrangPriceVal').textContent = filters.arrangements.priceMax.toLocaleString('ru') + ' грн';
+    visibleCounts.arrangements = 12; renderArrangements();
+  });
+  $('#arrangReset').addEventListener('click', () => {
+    filters.arrangements = { search:'', season:'all', priceMax:5000 };
+    $('#arrangSearch').value = ''; $('#arrangSeason').value = 'all';
+    $('#arrangPriceMax').value = 5000; $('#arrangPriceVal').textContent = '5 000 грн';
+    visibleCounts.arrangements = 12; renderArrangements();
+  });
+
+  // ── Flower filters
+  $('#flowerSearch').addEventListener('input', e => { filters.flowers.search = e.target.value; visibleCounts.flowers = 12; renderFlowers(); });
+  $('#flowerSeason').addEventListener('change', e => { filters.flowers.season = e.target.value; visibleCounts.flowers = 12; renderFlowers(); });
+  $('#flowerColor').addEventListener('change', e => { filters.flowers.color = e.target.value; visibleCounts.flowers = 12; renderFlowers(); });
+  $('#flowerPriceMax').addEventListener('input', e => {
+    filters.flowers.priceMax = parseInt(e.target.value, 10);
+    $('#flowerPriceVal').textContent = filters.flowers.priceMax + ' грн';
+    visibleCounts.flowers = 12; renderFlowers();
+  });
+  $('#flowerDriedChip').addEventListener('click', () => {
+    filters.flowers.dried = !filters.flowers.dried;
+    $('#flowerDriedChip').classList.toggle('active', filters.flowers.dried);
+    visibleCounts.flowers = 12; renderFlowers();
+  });
+  $('#flowerReset').addEventListener('click', () => {
+    filters.flowers = { search:'', season:'all', color:'all', priceMax:500, dried:false };
+    $('#flowerSearch').value = ''; $('#flowerSeason').value = 'all'; $('#flowerColor').value = 'all';
+    $('#flowerPriceMax').value = 500; $('#flowerPriceVal').textContent = '500 грн';
+    $('#flowerDriedChip').classList.remove('active');
+    visibleCounts.flowers = 12; renderFlowers();
+  });
+
+  // ── Price filters
+  $('#priceSearch').addEventListener('input', e => { filters.prices.search = e.target.value; renderPriceTable(); });
+  $('#priceSeason').addEventListener('change', e => { filters.prices.season = e.target.value; renderPriceTable(); });
+  $('#pricePriceMax').addEventListener('input', e => {
+    filters.prices.priceMax = parseInt(e.target.value, 10);
+    $('#pricePriceVal').textContent = filters.prices.priceMax + ' грн';
+    renderPriceTable();
+  });
+  $('#priceReset').addEventListener('click', () => {
+    filters.prices = { search:'', season:'all', priceMax:500 };
+    $('#priceSearch').value = ''; $('#priceSeason').value = 'all';
+    $('#pricePriceMax').value = 500; $('#pricePriceVal').textContent = '500 грн';
+    renderPriceTable();
+  });
+
+  // Price table sort
+  $$('.price-table th.sortable').forEach(th => {
+    th.addEventListener('click', () => {
+      const sortBy = th.dataset.sort;
+      if (priceSort.by === sortBy) {
+        priceSort.dir = priceSort.dir === 'asc' ? 'desc' : 'asc';
+      } else {
+        priceSort.by = sortBy;
+        priceSort.dir = 'asc';
+      }
+      renderPriceTable();
+    });
+  });
+
+  // Price table inputs (delegated)
+  $('#priceTableBody').addEventListener('input', e => {
+    const inp = e.target.closest('[data-price-field]');
+    if (!inp) return;
+    const id = inp.dataset.id;
+    const field = inp.dataset.priceField;
+    const val = parseInt(inp.value, 10);
+    if (isNaN(val) || val < 0) return;
+    const orig = getAllFlowers().find(f => f.id === id);
+    const existing = state.userPrices[id] || { priceMin: orig.priceMin, priceMax: orig.priceMax };
+    existing[field] = val;
+    state.userPrices[id] = existing;
+    saveState();
+  });
+  $('#priceTableBody').addEventListener('change', e => {
+    const ver = e.target.closest('[data-verify]');
+    if (ver) {
+      state.verifiedPrices[ver.dataset.verify] = ver.checked;
+      saveState();
+      const badge = ver.closest('.verified-badge');
+      badge.classList.toggle('checked', ver.checked);
+      badge.querySelector('.verified-text').textContent = ver.checked ? 'видела' : 'отметить';
+    }
+  });
+
+  // Load more
+  $$('.btn-load-more').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const sec = btn.dataset.section;
+      visibleCounts[sec] += 12;
+      if (sec === 'bouquets') renderBouquets();
+      else if (sec === 'arrangements') renderArrangements();
+      else renderFlowers();
+    });
+  });
+
+  // Notes
+  let notesTimer;
+  $('#notesArea').addEventListener('input', e => {
+    state.notes = e.target.value;
+    clearTimeout(notesTimer);
+    const hint = $('#notesHint');
+    hint.textContent = '✏️ Печатаешь...';
+    hint.classList.remove('show');
+    notesTimer = setTimeout(() => {
+      saveState();
+      hint.textContent = '✓ Сохранено';
+      hint.classList.add('show');
+      setTimeout(() => {
+        hint.textContent = '💾 Сохраняется автоматически';
+        hint.classList.remove('show');
+      }, 1500);
+    }, 400);
+  });
+
+  // Links
+  $('#addLinkForm').addEventListener('submit', e => {
+    e.preventDefault();
+    const name = $('#linkName').value.trim();
+    const url = $('#linkUrl').value.trim();
+    if (!name || !url) return;
+    state.links.push({ name, url });
+    saveState();
+    renderLinks();
+    $('#linkName').value = '';
+    $('#linkUrl').value = '';
+    showToast('Ссылка добавлена');
+  });
+  $('#linksList').addEventListener('click', e => {
+    const del = e.target.closest('[data-del-link]');
+    if (del) {
+      const idx = parseInt(del.dataset.delLink, 10);
+      state.links.splice(idx, 1);
+      saveState();
+      renderLinks();
+      showToast('Удалено');
+    }
+  });
+
+  // Unfavorite from panel
+  $('#favBody').addEventListener('click', e => {
+    const un = e.target.closest('[data-unfav]');
+    if (un) {
+      e.stopPropagation();
+      const [type, id] = un.dataset.unfav.split(':');
+      toggleFavorite(type, id);
+    }
+  });
+}
+
+function openFavPanel() {
+  $('#favPanel').classList.add('open');
+  $('#favOverlay').classList.add('open');
+  renderFavoritesPanel();
+}
+function closeFavPanel() {
+  $('#favPanel').classList.remove('open');
+  $('#favOverlay').classList.remove('open');
+}
+
+/* ═══════════════════════════════════════════════════
+   INIT
+═══════════════════════════════════════════════════ */
+function init() {
+  loadState();
+  applyTheme(state.theme);
+  $('#notesArea').value = state.notes || '';
+  $('#lastUpdate').textContent = LAST_UPDATE;
+
+  renderAllSections();
+  renderLinks();
+  renderFavoritesPanel();
+  updateFavCount();
+
+  createHeroPetals();
+  initScrollAnimations();
+  initNavHighlight();
+  initEvents();
+
+  if (state.editMode) {
+    document.body.classList.add('edit-mode');
+    $('#editBar').classList.add('show');
+    $('#editBtn').classList.add('active');
+  }
+}
+
+document.addEventListener('DOMContentLoaded', init);
+</script>
+</body>
+</html>
