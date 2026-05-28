@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="10" fill="#f3ebda"/>
+  <g transform="translate(32 33)">
+    <!-- petals -->
+    <g fill="#8b3a26">
+      <ellipse cx="0" cy="-13" rx="6.5" ry="11"/>
+      <ellipse cx="0" cy="-13" rx="6.5" ry="11" transform="rotate(72)"/>
+      <ellipse cx="0" cy="-13" rx="6.5" ry="11" transform="rotate(144)"/>
+      <ellipse cx="0" cy="-13" rx="6.5" ry="11" transform="rotate(216)"/>
+      <ellipse cx="0" cy="-13" rx="6.5" ry="11" transform="rotate(288)"/>
+    </g>
+    <!-- center -->
+    <circle cx="0" cy="0" r="7" fill="#b8862f"/>
+    <circle cx="0" cy="0" r="3.2" fill="#f3ebda"/>
+  </g>
+  <!-- stem hint -->
+  <path d="M32 44 q2 8 0 16" stroke="#4a6447" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+</svg>

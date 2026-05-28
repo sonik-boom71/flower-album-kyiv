@@ -1,0 +1,50 @@
+/* ═══════════════════════════════════════════════════
+   responsive.css — media queries (load last)
+═══════════════════════════════════════════════════ */
+
+@media (max-width: 1024px) {
+  .almanac { grid-template-columns: repeat(2, 1fr); }
+  .colophon-top { grid-template-columns: 1fr 1fr; }
+  .insp-grid { grid-template-columns: 1fr; gap: 48px; }
+  .hero-grid { grid-template-columns: 1fr; gap: 60px; }
+  .hero-photo { aspect-ratio: 16 / 11; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); margin-top: 48px; }
+}
+
+@media (max-width: 768px) {
+  .section { padding: 80px 0; }
+  .container { padding: 0 20px; }
+  .masthead-inner { padding: 12px 20px; gap: 16px; }
+  .masthead-nav { display: none; }
+  .brand-title { font-size: 1.1rem; }
+  .brand-sub { font-size: 0.56rem; }
+  #hero { padding: 100px 20px 60px; }
+  .filters { gap: 20px; }
+  .filter-input, .filter-select { min-width: 0; flex: 1; }
+  .almanac { grid-template-columns: 1fr; }
+  .colophon-top { grid-template-columns: 1fr; gap: 32px; }
+  .book-name { font-size: 1.8rem; }
+  .book-grid { grid-template-columns: 1fr; }
+  .form-row { grid-template-columns: 1fr; }
+  .add-biblio { grid-template-columns: 1fr; }
+  .add-biblio button { padding: 12px; }
+  .fav-side { width: 100%; right: -100%; }
+  .suggest-picks { grid-template-columns: 1fr; }
+  .shortcuts-grid { grid-template-columns: 1fr; }
+  .settings-stat-grid { grid-template-columns: 1fr; }
+  .compare-tray { left: 16px; right: 16px; transform: translateY(120%); width: auto; }
+  .compare-tray.show { transform: translateY(0); }
+}
+
+@media (max-width: 480px) {
+  .plate-grid { grid-template-columns: 1fr; }
+  .hero-text h1 { font-size: 3rem; }
+  .hero-stats { grid-template-columns: 1fr 1fr; }
+  .hero-stat-num { font-size: 2rem; }
+  .toast { top: 76px; right: 16px; left: 16px; max-width: none; }
+  .book-photo { aspect-ratio: 4/3; }
+  .book-name { font-size: 1.5rem; }
+  .book-body { padding: 22px; }
+  .palette-input { font-size: 1.1rem; }
+  .calc-total-val { font-size: 1.6rem; }
+}

@@ -1,0 +1,43 @@
+/* ═══════════════════════════════════════════════════
+   theme.css — CSS variables & colour themes
+   Light (cream paper) is the default; dark is forest.
+═══════════════════════════════════════════════════ */
+:root {
+  --paper:        #f3ebda;
+  --paper-2:      #eadfc6;
+  --paper-3:      #ddd0b3;
+  --ink:          #2a2f24;
+  --ink-soft:     #6b6552;
+  --ink-faint:    #9a917c;
+  --rust:         #8b3a26;
+  --rust-soft:    rgba(139, 58, 38, 0.12);
+  --moss:         #4a6447;
+  --ochre:        #b8862f;
+  --line:         rgba(42, 47, 36, 0.18);
+  --line-strong:  rgba(42, 47, 36, 0.4);
+  --shadow:       0 2px 8px rgba(42, 47, 36, 0.06);
+  --shadow-lg:    0 12px 36px rgba(42, 47, 36, 0.10);
+
+  --serif-display: 'Cormorant Garamond', 'EB Garamond', 'Playfair Display', Garamond, Georgia, serif;
+  --serif-body:    'Source Serif Pro', 'Crimson Pro', 'Lora', Georgia, 'Times New Roman', serif;
+  --mono:          'JetBrains Mono', 'IBM Plex Mono', Menlo, 'Courier New', monospace;
+
+  --t: 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+[data-theme="dark"] {
+  --paper:        #1b201a;
+  --paper-2:      #232a23;
+  --paper-3:      #2c352c;
+  --ink:          #ece3cf;
+  --ink-soft:     #b4ab94;
+  --ink-faint:    #807865;
+  --rust:         #d97757;
+  --rust-soft:    rgba(217, 119, 87, 0.15);
+  --moss:         #8ab088;
+  --ochre:        #e0b25c;
+  --line:         rgba(236, 227, 207, 0.14);
+  --line-strong:  rgba(236, 227, 207, 0.32);
+  --shadow:       0 2px 8px rgba(0,0,0, 0.25);
+  --shadow-lg:    0 12px 36px rgba(0,0,0, 0.45);
+}

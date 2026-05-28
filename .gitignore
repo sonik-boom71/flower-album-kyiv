@@ -1,0 +1,29 @@
+# ── OS ─────────────────────────────
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ── Editors ────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ── Node / tooling (if ever added) ─
+node_modules/
+dist/
+.cache/
+*.log
+npm-debug.log*
+
+# ── Env ────────────────────────────
+.env
+.env.local
+
+# ── Misc ───────────────────────────
+*.tmp
+.parcel-cache/
+
+# ── Local dev tooling (not for deploy) ─
+.claude/
